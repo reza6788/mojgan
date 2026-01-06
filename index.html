@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meson Mojgan Esnaashary | Haute Couture Embroidery</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet"/>
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#C5A059', // Rich Gold
+                hover: '#B08D48',
+                light: '#E5C585',
+              },
+              secondary: {
+                DEFAULT: '#1A222F', // Deep Navy/Charcoal
+                light: '#2A3749',
+              },
+              background: {
+                light: '#F9F7F2', // Warm Off-white
+                dark: '#0F131A', // Very dark navy
+              },
+              surface: {
+                light: '#FFFFFF',
+                dark: '#151C26',
+              },
+              text: {
+                light: '#4A4A4A',
+                dark: '#D1D5DB'
+              }
+            },
+            fontFamily: {
+              display: ['"Cinzel"', 'serif'],
+              serif: ['"Playfair Display"', 'serif'],
+              sans: ['"Lato"', 'sans-serif'],
+              body: ['"Lato"', 'sans-serif'],
+              script: ['"Pinyon Script"', 'cursive'],
+            },
+            backgroundImage: {
+              'embroidery-pattern': "url('https://www.transparenttextures.com/patterns/black-linen.png')",
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #C5A059;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #B08D48;
+      }
+      
+      .rtl {
+        direction: rtl;
+        text-align: right;
+      }
+      .ltr {
+        direction: ltr;
+        text-align: left;
+      }
+
+      .gold-gradient-text {
+        background: linear-gradient(to right, #C5A059, #E5C585, #C5A059);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.24.7",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@hookform/resolvers/": "https://esm.sh/@hookform/resolvers@^5.2.2/",
+    "zustand": "https://esm.sh/zustand@^5.0.9",
+    "react-hook-form": "https://esm.sh/react-hook-form@^7.70.0",
+    "zod": "https://esm.sh/zod@^4.3.5"
+  }
+}
+</script>
+</head>
+  <body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300 font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
