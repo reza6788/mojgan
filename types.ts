@@ -9,6 +9,7 @@ export interface Translation {
     collections: string;
     maison: string;
     services: string;
+    testimonials: string;
     contact: string;
   };
   hero: {
@@ -74,6 +75,24 @@ export interface Translation {
       traditional: string;
       modern: string;
     };
+  };
+  testimonialsPage: {
+    subtitle: string;
+    title: string;
+    description: string;
+    cta: {
+      title: string;
+      subtitle: string;
+      button: string;
+    };
+    items: {
+      id: number;
+      name: string;
+      role: string;
+      text: string;
+      image: string;
+      featured?: boolean;
+    }[];
   };
   order: {
     title: string;

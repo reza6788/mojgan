@@ -63,12 +63,38 @@ const servicesItems = [
   }
 ];
 
+const testimonialItems = [
+  {
+    id: 1,
+    name: "Sarah Jenkins",
+    role: "Custom Evening Gown",
+    text: "The handcrafted embroidery on my evening gown was nothing short of a masterpiece. Mojgan's attention to detail turned a simple dress into a work of art. I felt like royalty.",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAob1pdX1V8YMDRevw-mDDEp_SuFKnBGjSRU-_3LYZbyqbYRPX9FRyutfYgabysCBwAGGXihRWjrr-Wdx_bx1g2sLLEttxvH5ga8MeJRIUrdOS43ar-92ShleK7pwmFpUdMujuZJ4rRf72hky4IQk_3yiixIKRS_pUH_oc_cjYi6bHy0EzD8KkrR7bzLJr3pdfA87rEa8LD2P1fHJmn-iBAPC38dou7Ru0W3lRujymQalqSE09lJxtyuGF0ILEeekxaBspJAOnOc1M"
+  },
+  {
+    id: 2,
+    name: "David Alistair",
+    role: "Bespoke Wedding Suit",
+    text: "Finding a tailor who understands the nuance of traditional Persian patterns while keeping the silhouette modern is rare. Meson Mojgan exceeded all my expectations for my wedding suit.",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCx6OUr3zdjuVO32UHI0eYldegxl3Mw4-JSGwTzBV4IeVfVfW7xVvSP5tMV_EjZ0jtTItKszO9Ef1HEbr2vyPF8UPKG_ktiZR0GyGkPaL0QfS_dSPD9KWeYKqkTfbpV71sqmv4bD9jgcaT4ERK671dOKJ05Uln2GEMJT8RT2OdDLASjA7C_fOYKDQDHpwns13SVmvoW_lKKpO7d1S4V91aUKpaGA21S1MPyueSJMvQ1P3kSuXhftech7S0DlMJpypqVne-fM9JdWAc",
+    featured: true
+  },
+  {
+    id: 3,
+    name: "Eleanor Rigby",
+    role: "Heirloom Restoration",
+    text: "I commissioned a vintage restoration and was amazed by the delicate craftsmanship. The team treated my grandmother's heirloom with such respect and skill.",
+    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA5y56jiAjIhJW_gNVJinkL5lDK3Swvk8VxrlZu_9YHbvFe5pceJSjGashmdBTfgXaiYKtJcu_KqusUlwrdw9Tv-SNSyzv0f4GA1MrP_UbTM-izUAjFT2BSMYkd7nwCZ_q-3EpZMRGTJSp3SOgeLcrzxAOnm7TiXs8b2wgvlrZdo7QIFrB50ONRGkeLEnyy6UsWj2pw3jL6auSibRMh3GepwWg-rg9tQGCN6Mcd4doxKOT62d7eTLuEq0SnAWXHqTPDCigG8mVQ9-s"
+  }
+];
+
 export const translations: Record<Language, Translation> = {
   [Language.EN]: {
     nav: {
       collections: "Collections",
       maison: "The Maison",
       services: "Services",
+      testimonials: "Testimonials",
       contact: "Contact",
     },
     hero: {
@@ -126,6 +152,17 @@ export const translations: Record<Language, Translation> = {
         modern: "Modern Art"
       }
     },
+    testimonialsPage: {
+      subtitle: "Voices of Elegance",
+      title: "Client Testimonials",
+      description: "Discover the stories behind our bespoke creations. From handcrafted embroidery to custom-designed gowns, read how Meson Mojgan Esnaashary brings artistic visions to life.",
+      cta: {
+        title: "Join our happy clients",
+        subtitle: "Book your consultation today",
+        button: "Contact Us"
+      },
+      items: testimonialItems
+    },
     order: {
       title: "Bespoke Commission",
       subtitle: "Begin your journey to a unique masterpiece",
@@ -153,6 +190,7 @@ export const translations: Record<Language, Translation> = {
       collections: "Kollektionen",
       maison: "Das Haus",
       services: "Dienstleistungen",
+      testimonials: "Kundenstimmen",
       contact: "Kontakt",
     },
     hero: {
@@ -210,6 +248,17 @@ export const translations: Record<Language, Translation> = {
         modern: "Moderne Kunst"
       }
     },
+    testimonialsPage: {
+      subtitle: "Stimmen der Eleganz",
+      title: "Kundenstimmen",
+      description: "Entdecken Sie die Geschichten hinter unseren maßgeschneiderten Kreationen. Lesen Sie, wie Meson Mojgan Esnaashary künstlerische Visionen zum Leben erweckt.",
+      cta: {
+        title: "Schließen Sie sich unseren glücklichen Kunden an",
+        subtitle: "Buchen Sie Ihre Beratung noch heute",
+        button: "Kontaktiere Uns"
+      },
+      items: testimonialItems
+    },
     order: {
       title: "Maßanfertigung",
       subtitle: "Beginnen Sie Ihre Reise zu einem einzigartigen Meisterwerk",
@@ -237,6 +286,7 @@ export const translations: Record<Language, Translation> = {
       collections: "مجموعه‌ها",
       maison: "مزون",
       services: "خدمات",
+      testimonials: "نظرات",
       contact: "تماس",
     },
     hero: {
@@ -293,6 +343,17 @@ export const translations: Record<Language, Translation> = {
         traditional: "سنتی",
         modern: "هنر مدرن"
       }
+    },
+    testimonialsPage: {
+      subtitle: "صداهای وقار",
+      title: "نظرات مشتریان",
+      description: "داستان‌های پشت خلق آثار سفارشی ما را کشف کنید. از گلدوزی‌های دستی تا لباس‌های طراحی شده اختصاصی.",
+      cta: {
+        title: "به مشتریان راضی ما بپیوندید",
+        subtitle: "امروز وقت مشاوره خود را رزرو کنید",
+        button: "تماس با ما"
+      },
+      items: testimonialItems
     },
     order: {
       title: "سفارش اختصاصی",
