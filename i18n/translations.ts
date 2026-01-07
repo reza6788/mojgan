@@ -1,5 +1,15 @@
 import { Language, Translation } from '../types';
 
+import serviceCustom from '../src/images/services/service-custom.jpg';
+import serviceBridal from '../src/images/services/service-bridal.jpg';
+import serviceFabric from '../src/images/services/service-fabric.jpg';
+import serviceRepair from '../src/images/services/service-repair.jpg';
+import serviceConsultation from '../src/images/services/service-consultation.jpg';
+import serviceCorporate from '../src/images/services/service-corporate.jpg';
+import testimonial1 from '../src/images/testimonials/testimonial-1.jpg';
+import testimonial2 from '../src/images/testimonials/testimonial-2.jpg';
+import testimonial3 from '../src/images/testimonials/testimonial-3.jpg';
+
 const servicesItems = [
   {
     id: "custom-garment",
@@ -9,7 +19,7 @@ const servicesItems = [
     features: ["Personalized Design Consultation", "Hand & Machine Techniques", "Vintage Restoration Capability", "Sustainable Thread Options"],
     tag: "Bespoke",
     icon: "style",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBSMNNi9xP9jd-0Z4Lr6PzqcB6edglQ-k4QgdMvlE_tOOmnkNsnew8DlNYw355YYhZJMDIbFy41wIkWqEH-QeNebpaldU0XarHVpz-8keBBRllVopLHF76V4uGBFlfU8S3iVNcEdIGJCDP1yv_fSf2VTBugOb7f98aaNhZSVou9lI7TyhJyQsd8piWrAtyrPQ1CEI7zIlHnzWRqKDDflI84D6jcBbM2JMeWbkK6iJBBmQ2vGAisJttDR7eCsq6QDoUCCNqvRjIrpcw"
+    image: serviceCustom
   },
   {
     id: "bridal-ceremonial",
@@ -19,7 +29,7 @@ const servicesItems = [
     features: ["Veil & Gown Embellishment", "Swarovski & Pearl Application", "Cultural Ceremonial Attire", "Heirloom Quality Finishes"],
     tag: "Luxury",
     icon: "favorite",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCLZjH5sjIY99ljkTNpyFri8TAHqQc0teYA_hSdNsPEOpCq-FgFtFhbUtaylV_llBZ7WXSvIAs3Pz0kfGZfbjCrd8XhbSePwVJu3LgH6BKWvxZPXCqcUHA1VOVfWyD5Kn120FLe0oSs30sx0jCk2RON7uol6eufEGPdBboAEB0jC0n1phg3yiFbTPIoZOeGjH9Qusz5PEXz7XJtcnE5e2hV2M_IvfrdiyBJZ3OOxvgU7TJ4tC-eoTsxellA7iXf6a5rHDvFVU2DLS4"
+    image: serviceBridal
   },
   {
     id: "fabric-personalization",
@@ -29,7 +39,7 @@ const servicesItems = [
     features: ["Custom Monogramming", "Luxury Linen Embroidery", "Corporate Gifting", "High-Precision Stitching"],
     tag: "Personal",
     icon: "edit",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAICUx6qRavHsybtruHIILbxw5DCnCsVc3sRoJ237ZDe-OwRPVEbqQiKRnCm563bn5Xs604AnAS_Lo7a8EUDQzeW7Qx3FfmpN-dby4vcZGjjNcGv9_9VL-X3ecEo_CIdwwT4L_NrVkpapMjwUcMFbtt6Q5vYqK1HJB3tLHUPenpvgcD-9jAADrrMCMJJQDxdy4SFr1wDnNpGUsj9v-W8qKaJjH_N_Y9XA4QwOx4oft6qvUNEhOuffCTF-c1_kLMlsgPq5sTM3dWuuQ"
+    image: serviceFabric
   },
   {
     id: "repair-restoration",
@@ -39,7 +49,7 @@ const servicesItems = [
     features: ["Antique Textile Conservation", "Invisible Mending", "Period-Correct Materials", "Structural Reinforcement"],
     tag: "Restoration",
     icon: "healing",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCIGZNlwC5DXdwizpWD28NZZ-PNLZlnQi4WWBEz6_-LqiX6V3HtKvXzAiJrAk1Jyjvz9bD7ifaBvjLDhYpN36KDD7235wxS2C4hgvu8SC0e5bSORSAD3ZPtwoOlbuz79xtlWdW0aSAXuj4nTv_-EmY6Jo3UfvaVy6ApdUJcBQOGUNyZWWo59Mr9mFDjXkAf4XDXBLwmC5KPw5-5q_JN81bt9KiTDsSFtq5ZcrOU9pOkPeqWiAbT4u3eRgdRHLqkBQDxwDq0F5xK8QE"
+    image: serviceRepair
   },
   {
     id: "design-consultation",
@@ -49,7 +59,7 @@ const servicesItems = [
     features: ["One-on-One with Creative Director", "Sketching & Visualization", "Material Swatch Selection", "Technique Advisory"],
     tag: "Design",
     icon: "palette",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBLCyvvTHSOVeSm4rdEWJ5dF4nOaMIJAfuY30Eo-AK1XN5jmAdoagsAplcN0_rHZmD_DRAvEBV5DdlYjQOIzzR4ksbVIG3-I6RCpJYHzzCNDkLO_rSFkSVauAG9LAszbBAJB4yUmmFr7WC9mONcjvTDLwEqqtG_i9drvoCK-70rjyhurMvET8NjlvSnIXyiBPg7H5gv8w2h6fm08ViQfkHrV0l5AzWAEy0Gy8JAHm7UDnDagqoVGGuGlYp8r4RUhKlwoZSpCBRDLxU"
+    image: serviceConsultation
   },
   {
     id: "bulk-corporate",
@@ -59,7 +69,7 @@ const servicesItems = [
     features: ["Volume Order Management", "Consistent Quality Control", "Brand Identity Alignment", "Uniforms & Merchandise"],
     tag: "Commercial",
     icon: "layers",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDsQZjWVRKSwQoVuIKMnKIhcaPQs7UptH8rij6TXfrLs4wYZ_gx6lQPcNcU3TD0S6pF1DtNrQF2wGTUC-QMdvIVqnLAEz8pKRH6zjxUcwxyqlV8PWx_PFAuzDtqrk3m6DKkTkZqffZ5AzNTE8EKtRCmGzGA6jLEcjrQBDdKZFazvtX5n8MsB6MFjYTgLuxe6tRmxzI4gvWW5ebU14HageDmdRFaLTuyUFJxF_s3GyxR4wz5MKSbPHA2McYHynJ0rtmcuhjHGNWW7FY"
+    image: serviceCorporate
   }
 ];
 
@@ -69,14 +79,14 @@ const testimonialItems = [
     name: "Sarah Jenkins",
     role: "Custom Evening Gown",
     text: "The handcrafted embroidery on my evening gown was nothing short of a masterpiece. Mojgan's attention to detail turned a simple dress into a work of art. I felt like royalty.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAob1pdX1V8YMDRevw-mDDEp_SuFKnBGjSRU-_3LYZbyqbYRPX9FRyutfYgabysCBwAGGXihRWjrr-Wdx_bx1g2sLLEttxvH5ga8MeJRIUrdOS43ar-92ShleK7pwmFpUdMujuZJ4rRf72hky4IQk_3yiixIKRS_pUH_oc_cjYi6bHy0EzD8KkrR7bzLJr3pdfA87rEa8LD2P1fHJmn-iBAPC38dou7Ru0W3lRujymQalqSE09lJxtyuGF0ILEeekxaBspJAOnOc1M"
+    image: testimonial1
   },
   {
     id: 2,
     name: "David Alistair",
     role: "Bespoke Wedding Suit",
     text: "Finding a tailor who understands the nuance of traditional Persian patterns while keeping the silhouette modern is rare. Meson Mojgan exceeded all my expectations for my wedding suit.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCx6OUr3zdjuVO32UHI0eYldegxl3Mw4-JSGwTzBV4IeVfVfW7xVvSP5tMV_EjZ0jtTItKszO9Ef1HEbr2vyPF8UPKG_ktiZR0GyGkPaL0QfS_dSPD9KWeYKqkTfbpV71sqmv4bD9jgcaT4ERK671dOKJ05Uln2GEMJT8RT2OdDLASjA7C_fOYKDQDHpwns13SVmvoW_lKKpO7d1S4V91aUKpaGA21S1MPyueSJMvQ1P3kSuXhftech7S0DlMJpypqVne-fM9JdWAc",
+    image: testimonial2,
     featured: true
   },
   {
@@ -84,7 +94,7 @@ const testimonialItems = [
     name: "Eleanor Rigby",
     role: "Heirloom Restoration",
     text: "I commissioned a vintage restoration and was amazed by the delicate craftsmanship. The team treated my grandmother's heirloom with such respect and skill.",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA5y56jiAjIhJW_gNVJinkL5lDK3Swvk8VxrlZu_9YHbvFe5pceJSjGashmdBTfgXaiYKtJcu_KqusUlwrdw9Tv-SNSyzv0f4GA1MrP_UbTM-izUAjFT2BSMYkd7nwCZ_q-3EpZMRGTJSp3SOgeLcrzxAOnm7TiXs8b2wgvlrZdo7QIFrB50ONRGkeLEnyy6UsWj2pw3jL6auSibRMh3GepwWg-rg9tQGCN6Mcd4doxKOT62d7eTLuEq0SnAWXHqTPDCigG8mVQ9-s"
+    image: testimonial3
   }
 ];
 
@@ -290,7 +300,7 @@ export const translations: Record<Language, Translation> = {
       heroTitle: "Unsere",
       heroTitleAccent: "Dienstleistungen",
       heroDesc: "Treten Sie ein in eine Welt, in der Fäden Geschichten von Eleganz weben. Bei Meson Mojgan Esnaashary haben wir uns darauf spezialisiert, Stoffen durch maßgeschneiderte Stickerei Leben einzuhauchen.",
-      items: servicesItems, 
+      items: servicesItems,
       cta: {
         title: "Bereit, etwas Schönes zu schaffen?",
         desc: "Ob es sich um ein einzelnes geschätztes Stück oder eine Kollektion für Ihre Boutique handelt, Meson Mojgan Esnaashary widmet sich der Perfektion in jedem Stich.",
@@ -417,7 +427,7 @@ export const translations: Record<Language, Translation> = {
       heroTitle: "خدمات",
       heroTitleAccent: "ما",
       heroDesc: "به دنیایی قدم بگذارید که در آن تارها داستان‌هایی از وقار می‌بافند. در مزون مژگان اسنی‌شری، ما در دمیدن روح به پارچه‌ها از طریق گلدوزی سفارشی و مهارت هنری تخصص داریم.",
-      items: servicesItems, 
+      items: servicesItems,
       cta: {
         title: "آماده خلق چیزی زیبا هستید؟",
         desc: "چه یک قطعه ارزشمند و چه مجموعه‌ای برای بوتیک شما باشد، مزون مژگان اسنی‌شری متعهد به کمال در هر کوک است.",

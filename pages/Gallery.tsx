@@ -5,70 +5,80 @@ import { translations } from '../i18n/translations';
 import { GalleryItem } from '../types';
 import { X } from 'lucide-react';
 
+import galleryHeader from '../src/images/gallery/header-texture.jpg';
+import gallery1 from '../src/images/gallery/gallery-1.jpg';
+import gallery2 from '../src/images/gallery/gallery-2.jpg';
+import gallery3 from '../src/images/gallery/gallery-3.jpg';
+import gallery4 from '../src/images/gallery/gallery-4.jpg';
+import gallery5 from '../src/images/gallery/gallery-5.jpg';
+import gallery6 from '../src/images/gallery/gallery-6.jpg';
+import gallery7 from '../src/images/gallery/gallery-7.jpg';
+import gallery8 from '../src/images/gallery/gallery-8.jpg';
+
 const galleryData: GalleryItem[] = [
-  { 
-    id: 1, 
-    title: "Pearls & Lace Veil", 
+  {
+    id: 1,
+    title: "Pearls & Lace Veil",
     subtitle: "Royal Collection",
-    category: "bridal", 
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAS3TCT9HOLInPL2TmDuBuiCvJPntolOi2AK9TjUZ4wu4cbbLPVlN6PX4MqVDSmel42H21uH_xjqGGl6SstKS5X_McPxgDOF_LTOgaTzjRbGCaoJ9NaD3D7ZnQ-K_00A-KlCBmFFl53sSD0I-Kyu27IkeHc_FhoKnM15H53H-BLGvfHdjwna6xiDBRjgHzMlEfgweEvNdIfZf4D1K7fruhcwHmjWyqs-ChSb1BOsxfBD7UrjBW_pENqqPrBw-zg6He9FU5PBIHlGDY", 
-    description: "Intricate white embroidery on bridal gown, part of the Royal Collection." 
+    category: "bridal",
+    image: gallery1,
+    description: "Intricate white embroidery on bridal gown, part of the Royal Collection."
   },
-  { 
-    id: 2, 
-    title: "Midnight Velvet", 
+  {
+    id: 2,
+    title: "Midnight Velvet",
     subtitle: "Evening Elegance",
-    category: "evening", 
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAUlAUDnJW-kY0OejT74xmcWhbfVjgR4oF--UxT_JROWTUtAue3XCtc0gdM3Qqiy32issL205dzNqskDf6cnrKmDUoSxXQwbNJ4is48ZmRGsNymGuGEZw3g_vHKSKgGSoejWorsPguAfL1KfJV1uOxHDCdLjzij4Dsb4T_hGwo1iTwjPOTgk52egh3hjtSH-N6tWu0FwkK3Q-7u793j3Ji3xA2clV5zw8Xh0tWz3DYyTMLB0uXXeA-hHpbqC7arCGq7unrOxq4e1-c", 
-    description: "Dark velvet evening gown embellished with delicate gold thread." 
+    category: "evening",
+    image: gallery2,
+    description: "Dark velvet evening gown embellished with delicate gold thread."
   },
-  { 
-    id: 3, 
-    title: "Qajar Floral Motif", 
+  {
+    id: 3,
+    title: "Qajar Floral Motif",
     subtitle: "Heritage",
-    category: "traditional", 
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuB1wkS2YYaMdR4ZPGVlivTamp5Q8k-xhU0rMXWM5vwBx-eVkDE5A2cZPXCpIbZG8BSgbIHvqPYNRS6TAtI601pysAw4KpyWN5QWmYEVv1p87kv1guP0YOjg4WeLq7HnJQy1XCUSaWk7oN_RWbJBcI8x56Gmv1J88xsHT4Wn_wLW8PERArbP2kmwlDwlYmIdN6ehAqNse2LseQ9WkqEu_BJ7ZF0XBbRWHttR9iCVab6T0B5gesKX9cdI4tqZYSklL-nlxq19V43a5yU", 
-    description: "A tribute to traditional Persian patterns featuring intricate floral motifs." 
+    category: "traditional",
+    image: gallery3,
+    description: "A tribute to traditional Persian patterns featuring intricate floral motifs."
   },
-  { 
-    id: 4, 
-    title: "Geometric Silk", 
+  {
+    id: 4,
+    title: "Geometric Silk",
     subtitle: "Contemporary",
-    category: "modern", 
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCGiAR8p13FdimkRSZAaqjDjA3XHEcN4NbNZWPqCIfCzQOkpe1uh3xvnXyfUFxlm77mnLAe-szHa_4qC64Fan-Sl4oZ_MeVRFcI2TVPMPELhMvlQZeSNvVSwXm90Lo6TAPlX-gwxmi52pIy09DacsVZ-Aar1oXxSETiDbiuLkunvkIIa9kOpFG5FZHDub0suTBObUgQDvifouo0ZKaXB8-EurBeCvvN3Yqcsl048kzH7B6Rq7gwXAjxhSZZWfZ-Y52yzEx07XjQqH4", 
-    description: "Modern abstract embroidery art on fine silk." 
+    category: "modern",
+    image: gallery4,
+    description: "Modern abstract embroidery art on fine silk."
   },
-  { 
-    id: 5, 
-    title: "Crystal Beading", 
+  {
+    id: 5,
+    title: "Crystal Beading",
     subtitle: "Bridal Couture",
-    category: "bridal", 
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD1aZ1_jXLvB3IrvdxcTDKvaCW6rBSkK36JRovvPf7EB1c3xCcn_qnikdpXFy0yrEU8zY6KLJStmPQYOGBdVvyFBPY-t-Oo10IISYI8OR45mKzqo9wr9vqrX78riuY1UldD_vBnrr7MolRZxOmcZkKjvI7bF3_wanqo-W4mgD8foBdicxJyPKnOy_s9VPaGmSMtelKaFLOMu9RpkXBO-6DzVwhbbwT5d7cgftlC04A5YPV112vvG6eDPKiw_Eq-RysvbCfX0ApHTwA", 
-    description: "Closeup of exquisite crystal beading on a luxury wedding dress." 
+    category: "bridal",
+    image: gallery5,
+    description: "Closeup of exquisite crystal beading on a luxury wedding dress."
   },
-  { 
-    id: 6, 
-    title: "Gold Paisley", 
+  {
+    id: 6,
+    title: "Gold Paisley",
     subtitle: "Classic",
-    category: "traditional", 
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuADF1hNc8io28U4e7j2aRbY0wpYuZyUfNN-PkCXDEFCyYvWoxt5X5jPtDqpAeJ9QVgVPlwzt1othySS_kTB30_d8cjNcQsWYczQAJD88FGDy1b0220erJXBB9AQg0f3IQyt5B1R6Q6UfoVniVPABZQhTyj_RH3uFScoMRO3b305UUU0MMUOEGzQm6ah3n9nYl7DrwwAbTS4pzjsd_CBInjzxn0rwlFBGX3WE_PmYRmTjB9QYRyPFWlJIZg-WxBwPWjEeAWoeyLDWYw", 
-    description: "Timeless gold thread paisley patterns on dark fabric." 
+    category: "traditional",
+    image: gallery6,
+    description: "Timeless gold thread paisley patterns on dark fabric."
   },
-  { 
-    id: 7, 
-    title: "Scarlet Needlework", 
+  {
+    id: 7,
+    title: "Scarlet Needlework",
     subtitle: "Soirée",
-    category: "evening", 
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBRcPl4voRE70OxaqA_ocV36mZTZz_UH241KONKITVyeEOBHwIR1mJlX7piw7lUeucjvpp5zUsbG9RrmqsQooevV309choXhj9aVCfKKb6y1gSysB48YQOeL24J9jKTdb7CXZniyoILSNFe7hDbRk-kLz_nQO4feCi8oy9k9X9f561Lg74u21GuxnoEfoOYdCdFX0FFAB9DXJc697l2Lif0oobh5a-7RfKmRxI4OdjjxU_NIjCyeeiigiJbSPR1wiV_kzHHH-C3c-w", 
-    description: "Vibrant red silk dress featuring detailed hand needlework." 
+    category: "evening",
+    image: gallery7,
+    description: "Vibrant red silk dress featuring detailed hand needlework."
   },
-  { 
-    id: 8, 
-    title: "Organic Lines", 
+  {
+    id: 8,
+    title: "Organic Lines",
     subtitle: "New Wave",
-    category: "modern", 
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCQiTO-hO7WqYZttHW0RGcbKq1s4VLOlfB7NGslLME5WgV7mGYVrpG1xYtYWigWHjPoM65Og1GVEQRIbQGMT3-k2X4Ct4jZNEFFp2oDRhGBfnPgH_56tC4xT-Ojke2JsEud5s_9UvrkMCOlIyMtwWjPT0VbP4hBf3g6r8Hn0saatXwp3g_OZzpDK3RW6wbb6kYVvAvesgfDRnYQwJc2ohNg2FJDNyeaxXHRGvPOekY3ibcNF2_qtofij_BuBCZuN5G2t_RbvaK_OMY", 
-    description: "Minimalist linen embroidery focusing on organic shapes and lines." 
+    category: "modern",
+    image: gallery8,
+    description: "Minimalist linen embroidery focusing on organic shapes and lines."
   }
 ];
 
@@ -78,31 +88,31 @@ export const Gallery: React.FC = () => {
   const [filter, setFilter] = useState<'all' | 'bridal' | 'evening' | 'traditional' | 'modern'>('all');
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
 
-  const filteredItems = filter === 'all' 
-    ? galleryData 
+  const filteredItems = filter === 'all'
+    ? galleryData
     : galleryData.filter(item => item.category === filter);
 
   return (
     <div className="pt-24 min-h-screen bg-background-light dark:bg-background-dark pb-24 transition-colors duration-300">
-      
+
       {/* Header with Texture */}
       <header className="pt-32 pb-12 px-4 text-center relative overflow-hidden mb-12">
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-full opacity-5 pointer-events-none">
-          <img 
-            alt="texture" 
-            className="w-full h-full object-cover grayscale" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiSBF0-MVzp5AIShP6oOmDFPXHEmhYAZehCk_WKq1qNJqdNzxY3bCRzOW08MRyzaX8OgFjiYLlpws51eX_LOGFNXFc-Ul6cN_Fp-Eicm70GLEpdM1gf2Tk3IABaI_RO9_E9qNWb5qZI1C7x7ZgnvAMLVjHTnTxR7M5KAZdhZOqQSs5wTymoo16ozoGXQ8ZjCWRa07nW1fBQEYnv5t1Qu2C3jRmo_TUkQ7BsEda_sP1PCaq-KzZr1q-B-uM_C56bNIkWXHcq8-Okl8"
+          <img
+            alt="texture"
+            className="w-full h-full object-cover grayscale"
+            src={galleryHeader}
           />
         </div>
         <div className="relative z-10 max-w-3xl mx-auto">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             className="font-script text-3xl md:text-5xl text-primary mb-4"
           >
             {t.subtitle}
           </motion.p>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -110,7 +120,7 @@ export const Gallery: React.FC = () => {
           >
             {t.title}
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -128,11 +138,10 @@ export const Gallery: React.FC = () => {
             <button
               key={key}
               onClick={() => setFilter(key as any)}
-              className={`text-sm md:text-base uppercase tracking-wider transition-all pb-1 border-b-2 ${
-                filter === key 
-                  ? 'text-primary border-primary font-semibold' 
+              className={`text-sm md:text-base uppercase tracking-wider transition-all pb-1 border-b-2 ${filter === key
+                  ? 'text-primary border-primary font-semibold'
                   : 'text-gray-500 dark:text-gray-400 border-transparent hover:text-primary dark:hover:text-primary hover:border-primary/50 font-light'
-              }`}
+                }`}
             >
               {label}
             </button>
@@ -142,7 +151,7 @@ export const Gallery: React.FC = () => {
 
       {/* Masonry Grid */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+        <motion.div
           layout
           className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6"
         >
@@ -158,9 +167,9 @@ export const Gallery: React.FC = () => {
                 className="group relative overflow-hidden rounded shadow-lg cursor-pointer break-inside-avoid"
                 onClick={() => setSelectedItem(item)}
               >
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
+                <img
+                  src={item.image}
+                  alt={item.title}
                   className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background-dark/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
@@ -187,19 +196,19 @@ export const Gallery: React.FC = () => {
             className="fixed inset-0 z-[60] bg-black/95 flex items-center justify-center p-4"
             onClick={() => setSelectedItem(null)}
           >
-            <button 
+            <button
               className="absolute top-4 right-4 text-white hover:text-primary transition-colors p-2"
               onClick={() => setSelectedItem(null)}
             >
               <X size={32} />
             </button>
-            <div 
+            <div
               className="relative max-w-5xl max-h-[90vh] flex flex-col items-center"
               onClick={e => e.stopPropagation()}
             >
-              <img 
-                src={selectedItem.image} 
-                alt={selectedItem.title} 
+              <img
+                src={selectedItem.image}
+                alt={selectedItem.title}
                 className="max-h-[80vh] w-auto object-contain shadow-2xl border border-gray-800"
               />
               <div className="mt-4 text-center">
