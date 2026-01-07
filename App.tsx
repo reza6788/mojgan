@@ -8,6 +8,7 @@ import { Testimonials } from './pages/Testimonials';
 import { Services } from './pages/Services';
 import { ServiceDetail } from './pages/ServiceDetail';
 import { Order } from './pages/Order';
+import { Maison } from './pages/Maison';
 import { useStore } from './store/useStore';
 import { Language } from './types';
 
@@ -46,6 +47,7 @@ const App: React.FC = () => {
             <Route path="/services/:id" element={<ServiceDetail />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/order" element={<Order />} />
+            <Route path="/maison" element={<Maison />} />
           </Routes>
         </main>
         <Footer />

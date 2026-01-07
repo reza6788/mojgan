@@ -1,8 +1,12 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import { translations } from '../i18n/translations';
+
+// Fix for framer-motion type errors
+const m = motion as any;
 
 export const Testimonials: React.FC = () => {
   const { language } = useStore();
@@ -17,14 +21,16 @@ export const Testimonials: React.FC = () => {
         
         {/* Header */}
         <div className="relative max-w-7xl mx-auto text-center mb-16">
-          <motion.span 
+          {/* Fix for framer-motion type error */}
+          <m.span 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             className="font-script text-3xl md:text-4xl text-primary mb-2 block"
           >
             {t.subtitle}
-          </motion.span>
-          <motion.h2 
+          </m.span>
+          {/* Fix for framer-motion type error */}
+          <m.h2 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -32,15 +38,16 @@ export const Testimonials: React.FC = () => {
           >
             {t.title}
             <div className="h-1 w-24 bg-primary mx-auto mt-4 rounded-full"></div>
-          </motion.h2>
-          <motion.p 
+          </m.h2>
+          {/* Fix for framer-motion type error */}
+          <m.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
             className="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-300 font-light leading-relaxed"
           >
             {t.description}
-          </motion.p>
+          </m.p>
         </div>
 
         {/* Testimonials Grid */}
@@ -51,7 +58,8 @@ export const Testimonials: React.FC = () => {
             
             if (isFeatured) {
               return (
-                 <motion.div 
+                 /* Fix for framer-motion type error */
+                 <m.div 
                    key={item.id}
                    initial={{ opacity: 0, y: 30 }}
                    whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +71,7 @@ export const Testimonials: React.FC = () => {
                        <span className="material-symbols-outlined text-7xl">format_quote</span>
                     </div>
                     <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-white/20 p-1 mb-6 z-10 bg-secondary shadow-lg">
-                       <img alt={`Portrait of ${item.name}`} class="w-full h-full object-cover rounded-full" src={item.image} />
+                       <img alt={`Portrait of ${item.name}`} className="w-full h-full object-cover rounded-full" src={item.image} />
                     </div>
                     <div className="relative z-10 flex-grow">
                         <div className="flex justify-center mb-4 text-primary text-sm gap-1">
@@ -78,12 +86,13 @@ export const Testimonials: React.FC = () => {
                         <p className="text-xs uppercase tracking-widest text-primary/60">{item.role}</p>
                     </div>
                     <div className="absolute inset-2 border border-primary/20 rounded-lg pointer-events-none"></div>
-                 </motion.div>
+                 </m.div>
               );
             }
 
             return (
-              <motion.div 
+              /* Fix for framer-motion type error */
+              <m.div 
                 key={item.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -110,13 +119,14 @@ export const Testimonials: React.FC = () => {
                 </div>
                 {/* Decorative corner */}
                 <div className={`absolute w-16 h-16 border-b-2 ${idx === 0 ? 'border-r-2 bottom-0 right-0 rounded-br-xl' : 'border-l-2 bottom-0 left-0 rounded-bl-xl'} border-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>
 
         {/* Bottom CTA */}
-        <motion.div 
+        {/* Fix for framer-motion type error */}
+        <m.div 
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           className="mt-20 text-center"
@@ -141,7 +151,7 @@ export const Testimonials: React.FC = () => {
                 <span className="font-display italic text-primary text-sm">Since 1990</span>
                 <div className="h-px w-12 bg-primary"></div>
             </div>
-        </motion.div>
+        </m.div>
       </section>
     </div>
   );

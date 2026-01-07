@@ -1,9 +1,13 @@
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useStore } from '../store/useStore';
 import { translations } from '../i18n/translations';
+
+// Fix for framer-motion type errors
+const m = motion as any;
 
 export const Services: React.FC = () => {
   const { language } = useStore();
@@ -18,22 +22,24 @@ export const Services: React.FC = () => {
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <motion.span 
+          {/* Fix for framer-motion type error */}
+          <m.span 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="block text-primary uppercase tracking-[0.3em] text-sm mb-4 font-bold"
           >
             {t.heroTag}
-          </motion.span>
-          <motion.h1 
+          </m.span>
+          {/* Fix for framer-motion type error */}
+          <m.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl md:text-6xl font-display font-bold text-gray-900 dark:text-white mb-6"
           >
             {t.heroTitle} <span className="italic text-primary">{t.heroTitleAccent}</span>
-          </motion.h1>
+          </m.h1>
           
           <div className="flex items-center justify-center my-8 text-primary">
              <div className="h-px w-24 bg-primary mx-4"></div>
@@ -41,14 +47,15 @@ export const Services: React.FC = () => {
              <div className="h-px w-24 bg-primary mx-4"></div>
           </div>
 
-          <motion.p 
+          {/* Fix for framer-motion type error */}
+          <m.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-4 max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-300 font-light leading-relaxed font-sans"
           >
             {t.heroDesc}
-          </motion.p>
+          </m.p>
         </div>
       </div>
 
@@ -57,7 +64,8 @@ export const Services: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {t.items.map((item, index) => (
-              <motion.div 
+              /* Fix for framer-motion type error */
+              <m.div 
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +104,7 @@ export const Services: React.FC = () => {
                     </span>
                   </div>
                 </Link>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -104,9 +112,10 @@ export const Services: React.FC = () => {
 
       {/* CTA Section */}
       <div className="relative py-20 bg-secondary dark:bg-[#1A222E] overflow-hidden">
+        {/* Simplified background pattern to avoid complex nested quotes issues */}
         <div 
           className="absolute inset-0 opacity-10 pointer-events-none" 
-          style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')" }}
+          style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/black-linen.png')" }}
         ></div>
         
         <div className="relative max-w-4xl mx-auto text-center px-4">

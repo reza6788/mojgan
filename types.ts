@@ -54,6 +54,41 @@ export interface Translation {
       guaranteeText: string;
     };
   };
+  maisonPage: {
+    hero: {
+      year: string;
+      title: string;
+      accent: string;
+      subtitle: string;
+    };
+    tradition: {
+      title: string;
+      accent: string;
+      p1: string;
+      p2: string;
+      feature1Title: string;
+      feature1Desc: string;
+      feature2Title: string;
+      feature2Desc: string;
+      signature: string;
+    };
+    quote: string;
+    process: {
+      title: string;
+      steps: {
+        title: string;
+        desc: string;
+      }[];
+    };
+    timeline: {
+      title: string;
+      milestones: {
+        year: string;
+        title: string;
+        desc: string;
+      }[];
+    };
+  };
   footer: {
     description: string;
     headers: {
@@ -63,6 +98,7 @@ export interface Translation {
     };
     links: {
       about: string;
+      placeOrder: string;
       services: string;
       gallery: string;
       testimonials: string;
@@ -137,10 +173,10 @@ export interface Translation {
       name: string;
       email: string;
       phone: string;
-      garment: string;
-      style: string;
-      fabric: string;
-      date: string;
+      garmentType: string;
+      embroideryStyle: string;
+      fabricType: string;
+      deliveryDate: string;
       notes: string;
       submit: string;
     };
@@ -175,7 +211,6 @@ export interface OrderFormData {
   fabricType: string;
   deliveryDate: string;
   notes: string;
-  referenceImage?: FileList;
 }
 
 export interface ChatMessage {

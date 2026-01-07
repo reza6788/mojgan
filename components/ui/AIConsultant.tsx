@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useStore } from '../../store/useStore';
@@ -5,6 +6,9 @@ import { ChatMessage, Language } from '../../types';
 import { chatWithConsultant } from '../../services/ai';
 import { Loader2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+
+// Fix for framer-motion type errors
+const m = motion as any;
 
 export const AIConsultant: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -86,7 +90,8 @@ export const AIConsultant: React.FC = () => {
     <div className={`fixed bottom-6 right-6 z-50 flex flex-col items-end gap-4 pointer-events-none font-sans ${language === Language.FA ? 'rtl' : 'ltr'}`}>
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          /* Fix for framer-motion type error */
+          <m.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -188,7 +193,7 @@ export const AIConsultant: React.FC = () => {
               </div>
             </div>
 
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
 

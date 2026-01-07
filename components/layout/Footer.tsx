@@ -12,10 +12,8 @@ export const Footer: React.FC = () => {
     <footer className="bg-[#F9F6F0] dark:bg-[#0F1621] text-gray-600 dark:text-gray-400 pt-16 pb-8 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300 font-body">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Top Section: 4 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           
-          {/* Column 1: Brand & Socials */}
           <div className="space-y-6">
             <h2 className="font-display font-bold text-2xl tracking-widest text-primary uppercase">
               Meson Mojgan
@@ -36,18 +34,17 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
           <div>
             <h3 className="text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest mb-6">{t.headers.quickLinks}</h3>
             <ul className="space-y-4">
-              <li><Link to="/" className="text-sm hover:text-primary transition-colors">{t.links.about}</Link></li>
+              <li><Link to="/maison" className="text-sm hover:text-primary transition-colors">{t.links.about}</Link></li>
+              <li><Link to="/order" className="text-sm hover:text-primary transition-colors">{t.links.placeOrder}</Link></li>
               <li><Link to="/services" className="text-sm hover:text-primary transition-colors">{t.links.services}</Link></li>
               <li><Link to="/gallery" className="text-sm hover:text-primary transition-colors">{t.links.gallery}</Link></li>
               <li><Link to="/testimonials" className="text-sm hover:text-primary transition-colors">{t.links.testimonials}</Link></li>
             </ul>
           </div>
 
-          {/* Column 3: Services */}
           <div>
             <h3 className="text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest mb-6">{t.headers.services}</h3>
             <ul className="space-y-4">
@@ -58,7 +55,6 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 4: Contact */}
           <div>
             <h3 className="text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest mb-6">{t.headers.contact}</h3>
             <ul className="space-y-4">
@@ -83,7 +79,6 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* Bottom Section: Separator & Copyright */}
         <div className="border-t border-gray-200 dark:border-gray-800 pt-8 text-center">
           <p className="text-xs text-gray-400 dark:text-gray-500 font-light tracking-wide">
             {t.copyright}

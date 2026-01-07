@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -7,8 +8,10 @@ import { useStore } from '../store/useStore';
 import { translations } from '../i18n/translations';
 import { Button } from '../components/ui/Button';
 import { submitOrder } from '../services/api';
-import heroBg from '../src/images/hero-bg.jpg';
 import { Check, ChevronRight, Loader2, UploadCloud } from 'lucide-react';
+
+// Fix for framer-motion type error
+const m = motion as any;
 
 const createSchema = (t: any) => z.object({
   fullName: z.string().min(2, "Name is required"),
@@ -51,7 +54,8 @@ export const Order: React.FC = () => {
   if (isSuccess) {
     return (
       <div className="min-h-screen pt-24 flex items-center justify-center bg-background-light dark:bg-background-dark px-4">
-        <motion.div
+        {/* Fix for framer-motion type error */}
+        <m.div 
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           className="max-w-md w-full bg-surface-light dark:bg-surface-dark p-10 rounded-sm shadow-2xl text-center border-t-4 border-primary"
@@ -62,7 +66,7 @@ export const Order: React.FC = () => {
           <h2 className="font-display text-3xl mb-4 text-gray-900 dark:text-white">Request Received</h2>
           <p className="text-gray-600 dark:text-gray-300 mb-8">{t.success}</p>
           <Button onClick={() => window.location.href = '/'}>Return Home</Button>
-        </motion.div>
+        </m.div>
       </div>
     );
   }
@@ -71,9 +75,9 @@ export const Order: React.FC = () => {
     <div className="min-h-screen pt-32 pb-20 bg-background-light dark:bg-background-dark">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
-          <span className="text-primary uppercase tracking-[0.2em] text-xs font-bold mb-3 block">Est. 1990</span>
-          <h1 className="font-display text-4xl md:text-5xl text-gray-900 dark:text-white mb-2">{t.title}</h1>
-          <p className="text-gray-500 dark:text-gray-400 font-light">{t.subtitle}</p>
+           <span className="text-primary uppercase tracking-[0.2em] text-xs font-bold mb-3 block">Est. 1990</span>
+           <h1 className="font-display text-4xl md:text-5xl text-gray-900 dark:text-white mb-2">{t.title}</h1>
+           <p className="text-gray-500 dark:text-gray-400 font-light">{t.subtitle}</p>
         </div>
 
         <div className="bg-white dark:bg-surface-dark p-8 md:p-12 rounded-sm shadow-xl border border-gray-100 dark:border-gray-800 relative overflow-hidden">
@@ -97,8 +101,10 @@ export const Order: React.FC = () => {
                   <input {...register('email')} className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white" />
                   {errors.email && <p className="text-red-500 text-xs">{errors.email.message}</p>}
                 </div>
-                <div className="lg:col-span-2 relative hidden lg:block">
-                  <img alt="Embroidery texture" className="absolute inset-0 w-full h-full object-cover" src={heroBg} />
+                 <div className="space-y-2 md:col-span-2">
+                  <label className="text-xs uppercase tracking-wider text-gray-500">{t.fields.phone}</label>
+                  <input {...register('phone')} className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white" />
+                  {errors.phone && <p className="text-red-500 text-xs">{errors.phone.message}</p>}
                 </div>
               </div>
             </div>
@@ -110,7 +116,8 @@ export const Order: React.FC = () => {
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-xs uppercase tracking-wider text-gray-500">{t.fields.garment}</label>
+                  {/* Fix: use 'garmentType' instead of 'garment' to match Translation interface */}
+                  <label className="text-xs uppercase tracking-wider text-gray-500">{t.fields.garmentType}</label>
                   <select {...register('garmentType')} className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white">
                     <option value="">Select...</option>
                     <option value="gown">Evening Gown</option>
@@ -118,11 +125,12 @@ export const Order: React.FC = () => {
                     <option value="jacket">Jacket / Coat</option>
                     <option value="textile">Home Textile</option>
                   </select>
-                  {errors.garmentType && <p className="text-red-500 text-xs">{errors.garmentType.message}</p>}
+                   {errors.garmentType && <p className="text-red-500 text-xs">{errors.garmentType.message}</p>}
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs uppercase tracking-wider text-gray-500">{t.fields.style}</label>
-                  <select {...register('embroideryStyle')} className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white">
+                  {/* Fix: use 'embroideryStyle' instead of 'style' to match Translation interface */}
+                  <label className="text-xs uppercase tracking-wider text-gray-500">{t.fields.embroideryStyle}</label>
+                   <select {...register('embroideryStyle')} className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white">
                     <option value="">Select...</option>
                     <option value="traditional">Traditional Persian</option>
                     <option value="modern">Modern Minimalist</option>
@@ -131,13 +139,15 @@ export const Order: React.FC = () => {
                   </select>
                   {errors.embroideryStyle && <p className="text-red-500 text-xs">{errors.embroideryStyle.message}</p>}
                 </div>
-                <div className="space-y-2">
-                  <label className="text-xs uppercase tracking-wider text-gray-500">{t.fields.fabric}</label>
+                 <div className="space-y-2">
+                  {/* Fix: use 'fabricType' instead of 'fabric' to match Translation interface */}
+                  <label className="text-xs uppercase tracking-wider text-gray-500">{t.fields.fabricType}</label>
                   <input {...register('fabricType')} placeholder="e.g. Silk, Velvet" className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white" />
                   {errors.fabricType && <p className="text-red-500 text-xs">{errors.fabricType.message}</p>}
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs uppercase tracking-wider text-gray-500">{t.fields.date}</label>
+                  {/* Fix: use 'deliveryDate' instead of 'date' to match Translation interface */}
+                  <label className="text-xs uppercase tracking-wider text-gray-500">{t.fields.deliveryDate}</label>
                   <input type="date" {...register('deliveryDate')} className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white dark:[color-scheme:dark]" />
                   {errors.deliveryDate && <p className="text-red-500 text-xs">{errors.deliveryDate.message}</p>}
                 </div>
@@ -147,15 +157,15 @@ export const Order: React.FC = () => {
               <div className="mt-6">
                 <label className="text-xs uppercase tracking-wider text-gray-500 block mb-2">Reference Image (Optional)</label>
                 <div className="border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-sm p-8 flex flex-col items-center justify-center text-center hover:border-primary transition-colors cursor-pointer group bg-gray-50 dark:bg-black/20">
-                  <UploadCloud className="text-gray-400 group-hover:text-primary mb-2 transition-colors" size={32} />
-                  <p className="text-sm text-gray-500">Click to upload or drag and drop</p>
-                  <p className="text-xs text-gray-400 mt-1">SVG, PNG, JPG (max. 10MB)</p>
+                   <UploadCloud className="text-gray-400 group-hover:text-primary mb-2 transition-colors" size={32} />
+                   <p className="text-sm text-gray-500">Click to upload or drag and drop</p>
+                   <p className="text-xs text-gray-400 mt-1">SVG, PNG, JPG (max. 10MB)</p>
                 </div>
               </div>
 
               <div className="mt-6 space-y-2">
-                <label className="text-xs uppercase tracking-wider text-gray-500">{t.fields.notes}</label>
-                <textarea {...register('notes')} rows={4} className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white" />
+                  <label className="text-xs uppercase tracking-wider text-gray-500">{t.fields.notes}</label>
+                  <textarea {...register('notes')} rows={4} className="w-full bg-gray-50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-sm px-4 py-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all dark:text-white" />
               </div>
             </div>
 
