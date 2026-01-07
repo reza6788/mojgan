@@ -11,6 +11,8 @@ export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const t = translations[language].nav;
+  
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,15 +23,28 @@ export const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
+    { name: t.home, path: '/' },
     { name: t.collections, path: '/gallery' },
-    { name: t.maison, path: '/' },
     { name: t.services, path: '/services' }, 
     { name: t.testimonials, path: '/testimonials' },
     { name: t.contact, path: '/order' },
   ];
 
+  // Determine text colors based on context
+  // Case 1: Transparent Navbar on Home Page (Dark Background) -> Force Light Text
+  // Case 2: Scrolled Navbar OR Other Pages (Background matches Theme) -> Theme Text
+  const isTransparentOnDark = isHome && !scrolled;
+  
+  const textColorClass = isTransparentOnDark 
+    ? 'text-gray-300 hover:text-white' 
+    : 'text-gray-700 dark:text-gray-300 hover:text-primary';
+
+  const iconColorClass = isTransparentOnDark
+    ? 'text-gray-300 hover:text-white'
+    : 'text-gray-600 dark:text-gray-300 hover:text-primary';
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-primary/20 dark:border-primary/10 py-2' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-primary/20 dark:border-primary/10 py-3 shadow-sm' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -43,23 +58,24 @@ export const Navbar: React.FC = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`font-serif text-sm uppercase tracking-widest transition-colors duration-300 ${location.pathname === link.path ? 'text-primary' : 'hover:text-primary dark:text-gray-300'}`}
+                className={`font-serif text-sm uppercase tracking-widest transition-colors duration-300 ${location.pathname === link.path ? 'text-primary font-semibold' : textColorClass}`}
               >
                 {link.name}
               </Link>
             ))}
             
-            <div className="h-6 w-px bg-gray-300 dark:bg-gray-700 mx-4"></div>
+            <div className={`h-6 w-px mx-4 ${isTransparentOnDark ? 'bg-white/20' : 'bg-gray-300 dark:bg-gray-700'}`}></div>
 
-            <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
-               <span className="material-icons text-primary text-xl leading-none">{theme === 'dark' ? 'light_mode' : 'dark_mode'}</span>
+            <button onClick={toggleTheme} className={`p-2 rounded-full transition-colors ${iconColorClass}`}>
+               <span className="material-icons text-xl leading-none">{theme === 'dark' ? 'light_mode' : 'dark_mode'}</span>
             </button>
             
             <div className="relative group">
-               <button className="flex items-center text-gray-600 dark:text-gray-300 hover:text-primary transition-colors gap-1 uppercase text-xs font-bold">
+               <button className={`flex items-center transition-colors gap-1 uppercase text-xs font-bold ${iconColorClass}`}>
                  <Globe size={16} />
                  <span>{language}</span>
                </button>
+               {/* Dropdown remains styled for the theme background */}
                <div className="absolute right-0 mt-2 w-24 bg-white dark:bg-surface-dark shadow-xl rounded-sm border border-gray-100 dark:border-gray-800 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-right z-50">
                  {Object.values(Language).map((lang) => (
                    <button
@@ -76,12 +92,12 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-4">
-             <button onClick={toggleTheme} className="text-gray-600 dark:text-gray-300">
-              <span className="material-icons text-primary">{theme === 'dark' ? 'light_mode' : 'dark_mode'}</span>
+             <button onClick={toggleTheme} className={iconColorClass}>
+              <span className="material-icons">{theme === 'dark' ? 'light_mode' : 'dark_mode'}</span>
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+              className={iconColorClass}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -90,14 +106,14 @@ export const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden absolute top-full left-0 w-full bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+      <div className={`md:hidden absolute top-full left-0 w-full bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800 transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-96 opacity-100 shadow-xl' : 'max-h-0 opacity-0'}`}>
         <div className="px-4 py-6 space-y-4 flex flex-col items-center">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               onClick={() => setIsOpen(false)}
-              className="font-serif text-sm uppercase tracking-widest text-gray-800 dark:text-gray-200 hover:text-primary"
+              className={`font-serif text-sm uppercase tracking-widest hover:text-primary ${location.pathname === link.path ? 'text-primary' : 'text-gray-800 dark:text-gray-200'}`}
             >
               {link.name}
             </Link>

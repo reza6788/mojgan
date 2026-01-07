@@ -1,40 +1,90 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { Globe, Camera, AtSign, Phone, Mail, MapPin, Clock, Facebook, Instagram } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-secondary text-white py-12 border-t-4 border-primary">
+    <footer className="bg-[#F9F6F0] dark:bg-[#0F1621] text-gray-600 dark:text-gray-400 pt-16 pb-8 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300 font-body">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          <div className="md:col-span-2">
-            <h2 className="font-display text-3xl mb-4 tracking-widest text-primary">MOJGAN</h2>
-            <p className="text-gray-400 font-serif italic max-w-sm">"Since 1990, defining elegance through the art of embroidery."</p>
-            <div className="mt-6 flex space-x-4">
-              <a className="text-gray-400 hover:text-primary transition-colors" href="#"><span className="sr-only">Instagram</span>📷</a>
-              <a className="text-gray-400 hover:text-primary transition-colors" href="#"><span className="sr-only">Facebook</span>📘</a>
-              <a className="text-gray-400 hover:text-primary transition-colors" href="#"><span className="sr-only">Pinterest</span>📌</a>
+        
+        {/* Top Section: 4 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          
+          {/* Column 1: Brand & Socials */}
+          <div className="space-y-6">
+            <h2 className="font-display font-bold text-2xl tracking-widest text-primary uppercase">
+              Meson Mojgan
+            </h2>
+            <p className="text-sm leading-relaxed text-gray-500 dark:text-gray-400 max-w-xs">
+              Since 1990, crafting luxury embroidery with passion and precision. A legacy of needlework artistry for the modern era.
+            </p>
+            <div className="flex gap-4 pt-2">
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                <Facebook size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                <Instagram size={20} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-primary transition-colors">
+                <AtSign size={20} />
+              </a>
             </div>
           </div>
+
+          {/* Column 2: Quick Links */}
           <div>
-            <h3 className="font-display text-lg mb-4 text-primary">Explore</h3>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li><a className="hover:text-white transition-colors" href="#">Our History</a></li>
-              <li><a className="hover:text-white transition-colors" href="#">Haute Couture</a></li>
-              <li><a className="hover:text-white transition-colors" href="#">Bridal</a></li>
-              <li><a className="hover:text-white transition-colors" href="#">Appointments</a></li>
+            <h3 className="text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest mb-6">Quick Links</h3>
+            <ul className="space-y-4">
+              <li><Link to="/" className="text-sm hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link to="/services" className="text-sm hover:text-primary transition-colors">Our Services</Link></li>
+              <li><Link to="/gallery" className="text-sm hover:text-primary transition-colors">Portfolio Gallery</Link></li>
+              <li><Link to="/testimonials" className="text-sm hover:text-primary transition-colors">Testimonials</Link></li>
             </ul>
           </div>
+
+          {/* Column 3: Services */}
           <div>
-            <h3 className="font-display text-lg mb-4 text-primary">Contact</h3>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li className="flex items-center"><span className="material-icons text-xs mr-2">location_on</span> Tehran, Iran</li>
-              <li className="flex items-center"><span className="material-icons text-xs mr-2">phone</span> +98 21 8888 8888</li>
-              <li className="flex items-center"><span className="material-icons text-xs mr-2">email</span> maison@mojgan.com</li>
+            <h3 className="text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest mb-6">Services</h3>
+            <ul className="space-y-4">
+              <li><Link to="/services/bridal-ceremonial" className="text-sm hover:text-primary transition-colors">Bridal Embroidery</Link></li>
+              <li><Link to="/services/custom-garment" className="text-sm hover:text-primary transition-colors">Custom Garments</Link></li>
+              <li><Link to="/services/repair-restoration" className="text-sm hover:text-primary transition-colors">Restoration</Link></li>
+              <li><Link to="/services/fabric-personalization" className="text-sm hover:text-primary transition-colors">Monogramming</Link></li>
             </ul>
           </div>
+
+          {/* Column 4: Contact */}
+          <div>
+            <h3 className="text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest mb-6">Contact</h3>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-sm">
+                <MapPin size={16} className="text-primary mt-1 shrink-0" />
+                <span>123 Artisan Ave, Design District</span>
+              </li>
+              <li className="flex items-center gap-3 text-sm">
+                <Phone size={16} className="text-primary shrink-0" />
+                <span>+1 (555) 123-4567</span>
+              </li>
+              <li className="flex items-center gap-3 text-sm">
+                <Mail size={16} className="text-primary shrink-0" />
+                <span>info@mesonmojgan.com</span>
+              </li>
+              <li className="flex items-center gap-3 text-sm">
+                <Clock size={16} className="text-primary shrink-0" />
+                <span>Mon - Sat: 9:00 - 18:00</span>
+              </li>
+            </ul>
+          </div>
+
         </div>
-        <div className="border-t border-gray-700 pt-8 text-center text-xs text-gray-500 font-sans tracking-wide">
-          © {new Date().getFullYear()} Meson Mojgan Esnaashary. All rights reserved.
+
+        {/* Bottom Section: Separator & Copyright */}
+        <div className="border-t border-gray-200 dark:border-gray-800 pt-8 text-center">
+          <p className="text-xs text-gray-400 dark:text-gray-500 font-light tracking-wide">
+            © 2026 Meson Mojgan Esnaashary. All rights reserved.
+          </p>
         </div>
+
       </div>
     </footer>
   );

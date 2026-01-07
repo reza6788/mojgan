@@ -6,6 +6,7 @@ export enum Language {
 
 export interface Translation {
   nav: {
+    home: string;
     collections: string;
     maison: string;
     services: string;

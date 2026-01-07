@@ -91,6 +91,7 @@ const testimonialItems = [
 export const translations: Record<Language, Translation> = {
   [Language.EN]: {
     nav: {
+      home: "Home",
       collections: "Collections",
       maison: "The Maison",
       services: "Services",
@@ -187,6 +188,7 @@ export const translations: Record<Language, Translation> = {
   },
   [Language.DE]: {
     nav: {
+      home: "Startseite",
       collections: "Kollektionen",
       maison: "Das Haus",
       services: "Dienstleistungen",
@@ -283,6 +285,7 @@ export const translations: Record<Language, Translation> = {
   },
   [Language.FA]: {
     nav: {
+      home: "خانه",
       collections: "مجموعه‌ها",
       maison: "مزون",
       services: "خدمات",
