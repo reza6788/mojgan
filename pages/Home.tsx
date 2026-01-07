@@ -7,6 +7,7 @@ import { z } from 'zod';
 import { submitOrder } from '../services/api';
 import { useStore } from '../store/useStore';
 import { translations } from '../i18n/translations';
+import { AIConsultant } from '../components/ui/AIConsultant';
 
 // Schema for the Quick Order form on home page
 const quickOrderSchema = z.object({
@@ -310,21 +311,8 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Floating AI Helper */}
-      <div className="fixed bottom-6 right-6 z-40">
-        <button className="group flex items-center gap-3 bg-surface-dark text-white p-2 pr-6 rounded-full shadow-2xl border border-primary/30 hover:border-primary transition-all duration-300">
-            <div className="relative">
-                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white relative z-10 shadow-lg group-hover:scale-110 transition-transform">
-                    <span className="material-symbols-outlined text-2xl">smart_toy</span>
-                </div>
-                <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-20"></div>
-            </div>
-            <div className="text-left hidden md:block">
-                <p className="text-[10px] uppercase text-gray-400 tracking-wider font-bold">Need Help?</p>
-                <p className="text-xs font-medium text-white">AI Embroidery Consultant</p>
-            </div>
-        </button>
-      </div>
+      {/* Floating AI Helper - Replaced with new component */}
+      <AIConsultant />
     </div>
   );
 };
