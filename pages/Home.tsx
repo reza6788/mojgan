@@ -22,6 +22,7 @@ type QuickOrderSchema = z.infer<typeof quickOrderSchema>;
 export const Home: React.FC = () => {
   const { language } = useStore();
   const t = translations[language];
+  const homeT = t.home; // Shortcut for home translations
   
   // Get the first 3 services to display on the home page
   const featuredServices = t.servicesPage.items.slice(0, 3);
@@ -76,9 +77,9 @@ export const Home: React.FC = () => {
                     />
                 </div>
                 
-                {/* Brand Name Added Here */}
+                {/* Brand Name */}
                 <span className="font-display tracking-[0.2em] text-primary/90 text-sm md:text-lg uppercase font-medium drop-shadow-lg">
-                    Meson Mojgan Esnaashary
+                    {homeT.hero.brand}
                 </span>
             </motion.div>
             
@@ -88,7 +89,7 @@ export const Home: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="font-display text-3xl md:text-5xl lg:text-6xl text-gray-100 font-medium tracking-wide leading-tight mb-6"
             >
-                Timeless Handcrafted Embroidery for <span className="italic text-primary/90 font-light">Elegant Fashion</span>
+                {homeT.hero.line1}<br className="hidden md:block" /> {homeT.hero.line2} <span className="italic text-primary/90 font-light">{homeT.hero.accent}</span>
             </motion.h1>
             <motion.p 
                 initial={{ opacity: 0 }}
@@ -96,7 +97,7 @@ export const Home: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="font-body text-gray-300 text-sm md:text-lg font-light tracking-wide max-w-2xl mx-auto mb-10 leading-relaxed"
             >
-                Where tradition meets modern luxury. Bespoke textile art and custom-designed garments for the distinguished individual.
+                {homeT.hero.description}
             </motion.p>
             <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -106,12 +107,12 @@ export const Home: React.FC = () => {
             >
                 <Link to="/order" className="group relative px-8 py-4 bg-primary text-background-dark font-body font-semibold tracking-widest text-xs md:text-sm uppercase transition-all duration-300 hover:bg-white hover:shadow-[0_0_20px_rgba(197,160,89,0.5)] border border-primary">
                     <span className="relative z-10 flex items-center gap-2">
-                        Order Custom Design
-                        <span className="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1">arrow_forward</span>
+                        {homeT.hero.btnOrder}
+                        <span className="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1 rtl:rotate-180">arrow_forward</span>
                     </span>
                 </Link>
                 <Link to="/gallery" className="group relative px-8 py-4 bg-transparent text-white border border-white/30 font-body font-medium tracking-widest text-xs md:text-sm uppercase transition-all duration-300 hover:border-primary hover:text-primary backdrop-blur-sm">
-                    <span className="relative z-10">View Gallery</span>
+                    <span className="relative z-10">{homeT.hero.btnGallery}</span>
                 </Link>
             </motion.div>
         </div>
@@ -121,26 +122,26 @@ export const Home: React.FC = () => {
       <section className="py-24 px-4 bg-background-light dark:bg-background-dark relative border-b border-primary/10" id="legacy">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div className="order-2 md:order-1 relative">
-                <div className="absolute -left-10 -top-10 text-9xl font-display text-primary/5 dark:text-primary/5 select-none z-0">1990</div>
+                <div className="absolute -left-10 -top-10 text-9xl font-display text-primary/5 dark:text-primary/5 select-none z-0">{homeT.legacy.year}</div>
                 <div className="w-16 h-1 bg-primary mb-6 relative z-10"></div>
                 <h2 className="font-display text-4xl md:text-5xl text-gray-900 dark:text-white mb-6 relative z-10">
-                    A Legacy of <span className="text-primary italic">Detail</span>
+                    {homeT.legacy.title} <span className="text-primary italic">{homeT.legacy.accent}</span>
                 </h2>
                 <p className="text-gray-600 dark:text-gray-400 font-light leading-relaxed mb-6 text-justify">
-                    At Meson Mojgan Esnaashary, every stitch tells a story. Established in 1990, we have dedicated over three decades to the mastery of traditional Persian embroidery techniques, fusing them with contemporary silhouettes to create wearable art.
+                    {homeT.legacy.p1}
                 </p>
                 <p className="text-gray-600 dark:text-gray-400 font-light leading-relaxed mb-8 text-justify">
-                    Our atelier creates more than just clothing; we create heirlooms. From bridal trousseaus to evening gowns, each piece is a unique canvas of golden threads, silk, and passion, meticulously crafted by master artisans.
+                    {homeT.legacy.p2}
                 </p>
                 <div className="flex gap-4">
                     <div className="flex flex-col">
-                        <span className="font-display text-3xl text-primary">30+</span>
-                        <span className="text-xs uppercase tracking-wider text-gray-500">Years Experience</span>
+                        <span className="font-display text-3xl text-primary">{homeT.legacy.stat1}</span>
+                        <span className="text-xs uppercase tracking-wider text-gray-500">{homeT.legacy.stat1Label}</span>
                     </div>
                     <div className="w-px bg-gray-300 dark:bg-gray-700 h-12"></div>
                     <div className="flex flex-col">
-                        <span className="font-display text-3xl text-primary">5k+</span>
-                        <span className="text-xs uppercase tracking-wider text-gray-500">Custom Pieces</span>
+                        <span className="font-display text-3xl text-primary">{homeT.legacy.stat2}</span>
+                        <span className="text-xs uppercase tracking-wider text-gray-500">{homeT.legacy.stat2Label}</span>
                     </div>
                 </div>
             </div>
@@ -157,9 +158,9 @@ export const Home: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
-                <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase block mb-3">Our Expertise</span>
+                <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase block mb-3">{homeT.services.subtitle}</span>
                 <h2 className="font-display text-4xl md:text-5xl text-gray-900 dark:text-white">
-                    Atelier <span className="italic text-primary">Services</span>
+                    {homeT.services.title} <span className="italic text-primary">{homeT.services.accent}</span>
                 </h2>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
@@ -183,7 +184,7 @@ export const Home: React.FC = () => {
                                 to={`/services/${item.id}`} 
                                 className="inline-flex items-center text-xs font-bold tracking-widest text-primary uppercase border-b border-transparent group-hover:border-primary pb-1 transition-all"
                             >
-                                View Details
+                                {homeT.services.viewDetails}
                             </Link>
                         </div>
                     </div>
@@ -205,10 +206,10 @@ export const Home: React.FC = () => {
             <div className="lg:w-1/3 lg:sticky lg:top-32 pt-8">
               <div className="w-16 h-1 bg-primary mb-8"></div>
               <h2 className="text-white font-display text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
-                Voices of <span className="italic text-primary block mt-2">Elegance</span>
+                {homeT.testimonials.title} <span className="italic text-primary block mt-2">{homeT.testimonials.accent}</span>
               </h2>
               <p className="text-gray-400 font-light leading-relaxed mb-10 text-lg">
-                Our creations are more than garments; they are cherished experiences. Read the stories of those who have adorned our art.
+                {homeT.testimonials.description}
               </p>
               {/* Removed scroll indicator as requested previously */}
             </div>
@@ -223,93 +224,28 @@ export const Home: React.FC = () => {
                 }}
               >
                 
-                {/* Item 1 */}
-                <div className="group bg-surface-dark border border-white/5 p-8 md:p-12 rounded relative overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
-                  <div className="relative z-10">
-                    <div className="mb-8"></div>
-                    <p className="text-gray-200 font-display text-xl md:text-2xl italic leading-relaxed mb-10">
-                      "The custom embroidery on my evening gown was breathtaking. Mojgan's team captured the essence of the Persian motif I wanted perfectly. A true masterpiece that felt alive."
-                    </p>
-                    <div className="flex items-center gap-5">
-                      <div className="w-14 h-14 bg-gradient-to-br from-primary to-[#7a602c] rounded-full p-[2px]">
-                        <div className="w-full h-full bg-surface-dark rounded-full flex items-center justify-center">
-                          <span className="font-display font-bold text-xl text-primary">S</span>
+                {t.testimonialsPage.items.map((item) => (
+                  <div key={item.id} className="group bg-surface-dark border border-white/5 p-8 md:p-12 rounded relative overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
+                    <div className="relative z-10">
+                      <div className="mb-8"></div>
+                      <p className="text-gray-200 font-display text-xl md:text-2xl italic leading-relaxed mb-10">
+                        "{item.text}"
+                      </p>
+                      <div className="flex items-center gap-5">
+                        <div className="w-14 h-14 bg-gradient-to-br from-primary to-[#7a602c] rounded-full p-[2px]">
+                          <div className="w-full h-full bg-surface-dark rounded-full flex items-center justify-center">
+                            <span className="font-display font-bold text-xl text-primary">{item.name.charAt(0)}</span>
+                          </div>
                         </div>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-display text-lg tracking-wide">Sarah Thompson</h4>
-                        <p className="text-primary/70 text-xs uppercase tracking-widest mt-1">Art Collector, London</p>
+                        <div>
+                          <h4 className="text-white font-display text-lg tracking-wide">{item.name}</h4>
+                          <p className="text-primary/70 text-xs uppercase tracking-widest mt-1">{item.role}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-
-                {/* Item 2 */}
-                <div className="group bg-surface-dark border border-white/5 p-8 md:p-12 rounded relative overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
-                  <div className="relative z-10">
-                    <div className="mb-8"></div>
-                    <p className="text-gray-200 font-display text-xl md:text-2xl italic leading-relaxed mb-10">
-                      "I trusted Meson Mojgan for my bridal veil, and the result brought tears to my eyes. The delicacy and precision of the gold thread work is unmatched. It is now a family heirloom."
-                    </p>
-                    <div className="flex items-center gap-5">
-                      <div className="w-14 h-14 bg-gradient-to-br from-primary to-[#7a602c] rounded-full p-[2px]">
-                        <div className="w-full h-full bg-surface-dark rounded-full flex items-center justify-center">
-                          <span className="font-display font-bold text-xl text-primary">E</span>
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-display text-lg tracking-wide">Elnaz R.</h4>
-                        <p className="text-primary/70 text-xs uppercase tracking-widest mt-1">Bride, Toronto</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Item 3 */}
-                <div className="group bg-surface-dark border border-white/5 p-8 md:p-12 rounded relative overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
-                  <div className="relative z-10">
-                    <div className="mb-8"></div>
-                    <p className="text-gray-200 font-display text-xl md:text-2xl italic leading-relaxed mb-10">
-                      "The fusion of ancient technique with modern silhouette is what drew me to this maison. The jacket I commissioned is not just clothing; it is a conversation piece of the highest caliber."
-                    </p>
-                    <div className="flex items-center gap-5">
-                      <div className="w-14 h-14 bg-gradient-to-br from-primary to-[#7a602c] rounded-full p-[2px]">
-                        <div className="w-full h-full bg-surface-dark rounded-full flex items-center justify-center">
-                          <span className="font-display font-bold text-xl text-primary">I</span>
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-display text-lg tracking-wide">Isabella M.</h4>
-                        <p className="text-primary/70 text-xs uppercase tracking-widest mt-1">Fashion Curator, Milan</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Item 4 */}
-                <div className="group bg-surface-dark border border-white/5 p-8 md:p-12 rounded relative overflow-hidden transition-all duration-500 hover:border-primary/30 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)]">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150 duration-700"></div>
-                  <div className="relative z-10">
-                    <div className="mb-8"></div>
-                    <p className="text-gray-200 font-display text-xl md:text-2xl italic leading-relaxed mb-10">
-                      "Exceptional service from start to finish. The way they integrated my grandmother's lace into a new modern kaftan was respectful, artistic, and utterly beautiful."
-                    </p>
-                    <div className="flex items-center gap-5">
-                      <div className="w-14 h-14 bg-gradient-to-br from-primary to-[#7a602c] rounded-full p-[2px]">
-                        <div className="w-full h-full bg-surface-dark rounded-full flex items-center justify-center">
-                          <span className="font-display font-bold text-xl text-primary">N</span>
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="text-white font-display text-lg tracking-wide">Nazanin K.</h4>
-                        <p className="text-primary/70 text-xs uppercase tracking-widest mt-1">Client, Tehran</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                ))}
 
               </div>
             </div>
@@ -322,41 +258,41 @@ export const Home: React.FC = () => {
         <div className="max-w-5xl mx-auto px-4">
             <div className="grid lg:grid-cols-5 gap-12 bg-white dark:bg-surface-dark shadow-2xl rounded-lg overflow-hidden border border-gray-100 dark:border-gray-800">
                 <div className="lg:col-span-3 p-8 md:p-12">
-                    <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase block mb-2">Bespoke Service</span>
+                    <span className="text-primary text-xs font-bold tracking-[0.2em] uppercase block mb-2">{homeT.orderSection.subtitle}</span>
                     <h2 className="font-display text-3xl md:text-4xl text-gray-900 dark:text-white mb-8">
-                        Start Your <span className="italic text-primary">Creation</span>
+                        {homeT.orderSection.title} <span className="italic text-primary">{homeT.orderSection.accent}</span>
                     </h2>
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                         <div className="grid md:grid-cols-2 gap-6">
                             <div className="relative">
-                                <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Full Name</label>
+                                <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">{t.order.fields.name}</label>
                                 <input {...register("fullName")} className="w-full bg-transparent border-b border-gray-300 dark:border-gray-700 focus:border-primary dark:focus:border-primary outline-none py-2 transition-colors text-gray-800 dark:text-gray-200" placeholder="Jane Doe" type="text"/>
                             </div>
                             <div className="relative">
-                                <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Phone Number</label>
+                                <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">{t.order.fields.phone}</label>
                                 <input {...register("phone")} className="w-full bg-transparent border-b border-gray-300 dark:border-gray-700 focus:border-primary dark:focus:border-primary outline-none py-2 transition-colors text-gray-800 dark:text-gray-200" placeholder="+1 (555) 000-0000" type="tel"/>
                             </div>
                         </div>
                         <div className="relative">
-                            <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Email Address</label>
+                            <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">{t.order.fields.email}</label>
                             <input {...register("email")} className="w-full bg-transparent border-b border-gray-300 dark:border-gray-700 focus:border-primary dark:focus:border-primary outline-none py-2 transition-colors text-gray-800 dark:text-gray-200" placeholder="jane@example.com" type="email"/>
                         </div>
                         <div className="relative">
-                            <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Service Interest</label>
+                            <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">{t.order.fields.garment}</label>
                             <select {...register("serviceInterest")} className="w-full bg-transparent border-b border-gray-300 dark:border-gray-700 focus:border-primary dark:focus:border-primary outline-none py-2 transition-colors text-gray-800 dark:text-gray-200">
-                                <option className="dark:bg-surface-dark" value="Custom Embroidery">Custom Embroidery</option>
-                                <option className="dark:bg-surface-dark" value="Bridal Couture">Bridal Couture</option>
-                                <option className="dark:bg-surface-dark" value="Fabric Personalization">Fabric Personalization</option>
-                                <option className="dark:bg-surface-dark" value="Consultation Only">Consultation Only</option>
+                                <option className="dark:bg-surface-dark" value="Custom Embroidery">{t.footer.links.custom}</option>
+                                <option className="dark:bg-surface-dark" value="Bridal Couture">{t.footer.links.bridal}</option>
+                                <option className="dark:bg-surface-dark" value="Fabric Personalization">{t.footer.links.monogram}</option>
+                                <option className="dark:bg-surface-dark" value="Consultation Only">Consultation</option>
                             </select>
                         </div>
                         <div className="relative">
-                            <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">Design Vision / Details</label>
+                            <label className="block text-xs uppercase tracking-wider text-gray-500 mb-2">{t.order.fields.notes}</label>
                             <textarea {...register("designVision")} className="w-full bg-transparent border border-gray-300 dark:border-gray-700 focus:border-primary dark:focus:border-primary outline-none p-3 transition-colors text-gray-800 dark:text-gray-200 rounded-sm" placeholder="Describe your vision, colors, and occasion..." rows={4}></textarea>
                         </div>
                         <div className="pt-4">
                             <button className="w-full md:w-auto px-10 py-4 bg-primary text-white font-semibold uppercase tracking-widest hover:bg-primary-hover transition-colors shadow-lg shadow-primary/30" type="submit">
-                                Submit Request
+                                {t.order.fields.submit}
                             </button>
                         </div>
                     </form>
@@ -366,8 +302,8 @@ export const Home: React.FC = () => {
                     <div className="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-10 text-white">
                         <span className="material-symbols-outlined text-4xl mb-4 text-primary">verified</span>
-                        <h3 className="font-display text-2xl mb-2">Guaranteed Excellence</h3>
-                        <p className="text-sm font-light text-gray-300">Each commission is treated with the utmost care, ensuring a personalized experience from sketch to stitch.</p>
+                        <h3 className="font-display text-2xl mb-2">{homeT.orderSection.guaranteeTitle}</h3>
+                        <p className="text-sm font-light text-gray-300">{homeT.orderSection.guaranteeText}</p>
                     </div>
                 </div>
             </div>

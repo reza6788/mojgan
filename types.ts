@@ -13,35 +13,65 @@ export interface Translation {
     testimonials: string;
     contact: string;
   };
-  hero: {
-    est: string;
-    title: string;
-    titleAccent: string;
+  home: {
+    hero: {
+      brand: string;
+      line1: string;
+      line2: string;
+      accent: string;
+      description: string;
+      btnOrder: string;
+      btnGallery: string;
+    };
+    legacy: {
+      year: string;
+      title: string;
+      accent: string;
+      p1: string;
+      p2: string;
+      stat1: string;
+      stat1Label: string;
+      stat2: string;
+      stat2Label: string;
+    };
+    services: {
+      subtitle: string;
+      title: string;
+      accent: string;
+      viewDetails: string;
+    };
+    testimonials: {
+      title: string;
+      accent: string;
+      description: string;
+      scroll: string;
+    };
+    orderSection: {
+      subtitle: string;
+      title: string;
+      accent: string;
+      guaranteeTitle: string;
+      guaranteeText: string;
+    };
+  };
+  footer: {
     description: string;
-  };
-  about: {
-    title: string;
-    titleAccent: string;
-    p1: string;
-    p2: string;
-    feature1Title: string;
-    feature1Desc: string;
-    feature2Title: string;
-    feature2Desc: string;
-    role: string;
-  };
-  quote: {
-    text: string;
-    label: string;
-  };
-  process: {
-    title: string;
-    step1Title: string;
-    step1Desc: string;
-    step2Title: string;
-    step2Desc: string;
-    step3Title: string;
-    step3Desc: string;
+    headers: {
+      quickLinks: string;
+      services: string;
+      contact: string;
+    };
+    links: {
+      about: string;
+      services: string;
+      gallery: string;
+      testimonials: string;
+      bridal: string;
+      custom: string;
+      restoration: string;
+      monogram: string;
+    };
+    copyright: string;
   };
   servicesPage: {
     heroTag: string;

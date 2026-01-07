@@ -98,35 +98,65 @@ export const translations: Record<Language, Translation> = {
       testimonials: "Testimonials",
       contact: "Contact",
     },
-    hero: {
-      est: "Est. 1990",
-      title: "The Legacy of",
-      titleAccent: "Esnaashary",
-      description: "Where threads of gold weave stories of timeless elegance."
+    home: {
+      hero: {
+        brand: "Meson Mojgan Esnaashary",
+        line1: "Timeless Handcrafted",
+        line2: "Embroidery for",
+        accent: "Elegant Fashion",
+        description: "Where tradition meets modern luxury. Bespoke textile art and custom-designed garments for the distinguished individual.",
+        btnOrder: "Order Custom Design",
+        btnGallery: "View Gallery"
+      },
+      legacy: {
+        year: "1990",
+        title: "A Legacy of",
+        accent: "Detail",
+        p1: "At Meson Mojgan Esnaashary, every stitch tells a story. Established in 1990, we have dedicated over three decades to the mastery of traditional Persian embroidery techniques, fusing them with contemporary silhouettes to create wearable art.",
+        p2: "Our atelier creates more than just clothing; we create heirlooms. From bridal trousseaus to evening gowns, each piece is a unique canvas of golden threads, silk, and passion, meticulously crafted by master artisans.",
+        stat1: "30+",
+        stat1Label: "Years Experience",
+        stat2: "5k+",
+        stat2Label: "Custom Pieces"
+      },
+      services: {
+        subtitle: "Our Expertise",
+        title: "Atelier",
+        accent: "Services",
+        viewDetails: "View Details"
+      },
+      testimonials: {
+        title: "Voices of",
+        accent: "Elegance",
+        description: "Our creations are more than garments; they are cherished experiences. Read the stories of those who have adorned our art.",
+        scroll: "Scroll Stories"
+      },
+      orderSection: {
+        subtitle: "Bespoke Service",
+        title: "Start Your",
+        accent: "Creation",
+        guaranteeTitle: "Guaranteed Excellence",
+        guaranteeText: "Each commission is treated with the utmost care, ensuring a personalized experience from sketch to stitch."
+      }
     },
-    about: {
-      title: "A Tradition of",
-      titleAccent: "Excellence",
-      p1: "Since 1990, Meson Mojgan Esnaashary has stood as a beacon of sartorial artistry. Founded on the belief that clothing is not merely worn but experienced, our maison specializes in the nearly forgotten art of handcrafted embroidery.",
-      p2: "Every garment that leaves our atelier is a labor of love, meticulously designed to reflect the unique spirit of its wearer. We blend ancient Persian needlework techniques with contemporary silhouettes, creating pieces that are both modern and timelessly significant.",
-      feature1Title: "Luxury Materials",
-      feature1Desc: "Sourced from the finest mills, we utilize pure silks, gold threads, and rare textiles.",
-      feature2Title: "Bespoke Design",
-      feature2Desc: "Collaborative creation process ensuring every stitch aligns with your vision.",
-      role: "Mojgan Esnaashary, Founder & Creative Director"
-    },
-    quote: {
-      text: "\"Embroidery is the poetry of the needle, written upon the canvas of silk.\"",
-      label: "The Philosophy"
-    },
-    process: {
-      title: "The Process",
-      step1Title: "Consultation & Sketch",
-      step1Desc: "We begin with a personal dialogue to understand your desires, followed by hand-drawn sketches.",
-      step2Title: "Handcrafting",
-      step2Desc: "Our artisans spend hundreds of hours applying beads, sequins, and threads by hand.",
-      step3Title: "Final Fitting",
-      step3Desc: "Precision adjustments ensure the garment drapes perfectly, completing the masterpiece."
+    footer: {
+      description: "Since 1990, crafting luxury embroidery with passion and precision. A legacy of needlework artistry for the modern era.",
+      headers: {
+        quickLinks: "Quick Links",
+        services: "Services",
+        contact: "Contact"
+      },
+      links: {
+        about: "About Us",
+        services: "Our Services",
+        gallery: "Portfolio Gallery",
+        testimonials: "Testimonials",
+        bridal: "Bridal Embroidery",
+        custom: "Custom Garments",
+        restoration: "Restoration",
+        monogram: "Monogramming"
+      },
+      copyright: "© 2026 Meson Mojgan Esnaashary. All rights reserved."
     },
     servicesPage: {
       heroTag: "The Art of Fine Needlework",
@@ -195,35 +225,65 @@ export const translations: Record<Language, Translation> = {
       testimonials: "Kundenstimmen",
       contact: "Kontakt",
     },
-    hero: {
-      est: "Gegr. 1990",
-      title: "Das Erbe von",
-      titleAccent: "Esnaashary",
-      description: "Wo Goldfäden Geschichten von zeitloser Eleganz weben."
+    home: {
+      hero: {
+        brand: "Meson Mojgan Esnaashary",
+        line1: "Zeitlose Handgefertigte",
+        line2: "Stickerei für",
+        accent: "Elegante Mode",
+        description: "Wo Tradition auf modernen Luxus trifft. Maßgeschneiderte Textilkunst und individuell entworfene Kleidungsstücke für die anspruchsvolle Persönlichkeit.",
+        btnOrder: "Individuelles Design Bestellen",
+        btnGallery: "Galerie Ansehen"
+      },
+      legacy: {
+        year: "1990",
+        title: "Ein Erbe des",
+        accent: "Details",
+        p1: "Bei Meson Mojgan Esnaashary erzählt jeder Stich eine Geschichte. Gegründet 1990, widmen wir uns seit über drei Jahrzehnten der Beherrschung traditioneller persischer Sticktechniken und verbinden sie mit zeitgenössischen Silhouetten.",
+        p2: "Unser Atelier schafft mehr als nur Kleidung; wir schaffen Erbstücke. Von der Brautausstattung bis zum Abendkleid ist jedes Stück eine einzigartige Leinwand aus Goldfäden, Seide und Leidenschaft.",
+        stat1: "30+",
+        stat1Label: "Jahre Erfahrung",
+        stat2: "5k+",
+        stat2Label: "Maßanfertigungen"
+      },
+      services: {
+        subtitle: "Unsere Expertise",
+        title: "Atelier",
+        accent: "Dienstleistungen",
+        viewDetails: "Details Anzeigen"
+      },
+      testimonials: {
+        title: "Stimmen der",
+        accent: "Eleganz",
+        description: "Unsere Kreationen sind mehr als Kleidungsstücke; sie sind geschätzte Erlebnisse. Lesen Sie die Geschichten derer, die unsere Kunst getragen haben.",
+        scroll: "Geschichten Scrollen"
+      },
+      orderSection: {
+        subtitle: "Maßgeschneiderter Service",
+        title: "Beginnen Sie Ihre",
+        accent: "Kreation",
+        guaranteeTitle: "Garantierte Exzellenz",
+        guaranteeText: "Jeder Auftrag wird mit größter Sorgfalt behandelt, um ein personalisiertes Erlebnis von der Skizze bis zum Stich zu gewährleisten."
+      }
     },
-    about: {
-      title: "Eine Tradition der",
-      titleAccent: "Exzellenz",
-      p1: "Seit 1990 steht Meson Mojgan Esnaashary als Leuchtfeuer der sartorialen Kunstfertigkeit. Unser Haus wurde in dem Glauben gegründet, dass Kleidung nicht nur getragen, sondern erlebt wird, und ist auf die fast vergessene Kunst der Handstickerei spezialisiert.",
-      p2: "Jedes Kleidungsstück, das unser Atelier verlässt, ist eine Liebeserklärung, sorgfältig entworfen, um den einzigartigen Geist seiner Trägerin widerzuspiegeln. Wir verbinden alte persische Handarbeitstechniken mit zeitgenössischen Silhouetten.",
-      feature1Title: "Luxuriöse Materialien",
-      feature1Desc: "Wir beziehen reine Seide, Goldfäden und seltene Textilien aus den besten Webereien.",
-      feature2Title: "Maßgeschneidertes Design",
-      feature2Desc: "Kollaborativer Prozess, der sicherstellt, dass jeder Stich Ihrer Vision entspricht.",
-      role: "Mojgan Esnaashary, Gründerin & Kreativdirektorin"
-    },
-    quote: {
-      text: "\"Stickerei ist die Poesie der Nadel, geschrieben auf der Leinwand der Seide.\"",
-      label: "Die Philosophie"
-    },
-    process: {
-      title: "Der Prozess",
-      step1Title: "Beratung & Skizze",
-      step1Desc: "Wir beginnen mit einem persönlichen Dialog, um Ihre Wünsche zu verstehen, gefolgt von handgezeichneten Skizzen.",
-      step2Title: "Handarbeit",
-      step2Desc: "Unsere Kunsthandwerker verbringen Hunderte von Stunden damit, Perlen, Pailletten und Fäden von Hand anzubringen.",
-      step3Title: "Endgültige Anprobe",
-      step3Desc: "Präzise Anpassungen sorgen für den perfekten Fall des Kleidungsstücks und vollenden das Meisterwerk."
+    footer: {
+      description: "Seit 1990 fertigen wir Luxusstickereien mit Leidenschaft und Präzision. Ein Erbe der Nadelkunst für die moderne Ära.",
+      headers: {
+        quickLinks: "Schnelllinks",
+        services: "Dienstleistungen",
+        contact: "Kontakt"
+      },
+      links: {
+        about: "Über Uns",
+        services: "Unsere Dienste",
+        gallery: "Portfolio Galerie",
+        testimonials: "Kundenstimmen",
+        bridal: "Brautstickerei",
+        custom: "Maßkleidung",
+        restoration: "Restaurierung",
+        monogram: "Monogrammierung"
+      },
+      copyright: "© 2026 Meson Mojgan Esnaashary. Alle Rechte vorbehalten."
     },
     servicesPage: {
       heroTag: "Die Kunst der feinen Nadelarbeit",
@@ -292,35 +352,65 @@ export const translations: Record<Language, Translation> = {
       testimonials: "نظرات",
       contact: "تماس",
     },
-    hero: {
-      est: "تاسیس ۱۹۹۰",
-      title: "میراث",
-      titleAccent: "اسنی‌شری",
-      description: "جایی که تارهای طلا داستان‌هایی از وقار جاودانه را می‌بافند."
+    home: {
+      hero: {
+        brand: "مزون مژگان اسنی‌شری",
+        line1: "گلدوزی دست‌دوز",
+        line2: "بی‌زمان برای",
+        accent: "مد فاخر",
+        description: "جایی که سنت با لوکس مدرن تلاقی می‌کند. هنر نساجی سفارشی و لباس‌های طراحی شده اختصاصی برای افراد متمایز.",
+        btnOrder: "سفارش طراحی اختصاصی",
+        btnGallery: "مشاهده گالری"
+      },
+      legacy: {
+        year: "۱۹۹۰",
+        title: "میراثی از",
+        accent: "جزئیات",
+        p1: "در مزون مژگان اسنی‌شری، هر کوک داستانی را روایت می‌کند. با تاسیس در سال ۱۹۹۰، ما بیش از سه دهه را وقف استادی در تکنیک‌های گلدوزی سنتی ایرانی کرده‌ایم و آن‌ها را با سیلوئت‌های معاصر ترکیب می‌کنیم.",
+        p2: "آتلیه ما بیش از لباس خلق می‌کند؛ ما میراث می‌آفرینیم. از جهیزیه عروس تا لباس‌های شب، هر قطعه بومی منحصر به فرد از تارهای طلا، ابریشم و اشتیاق است.",
+        stat1: "۳۰+",
+        stat1Label: "سال تجربه",
+        stat2: "۵هزار+",
+        stat2Label: "قطعه سفارشی"
+      },
+      services: {
+        subtitle: "تخصص ما",
+        title: "خدمات",
+        accent: "آتلیه",
+        viewDetails: "مشاهده جزئیات"
+      },
+      testimonials: {
+        title: "صداهای",
+        accent: "وقار",
+        description: "آثار ما بیش از لباس هستند؛ آن‌ها تجربه‌هایی ارزشمندند. داستان‌های کسانی که هنر ما را بر تن کرده‌اند بخوانید.",
+        scroll: "مرور داستان‌ها"
+      },
+      orderSection: {
+        subtitle: "خدمات سفارشی",
+        title: "آفرینش خود را",
+        accent: "آغاز کنید",
+        guaranteeTitle: "تضمین تعالی",
+        guaranteeText: "هر سفارش با نهایت دقت انجام می‌شود تا تجربه‌ای شخصی از طراحی تا دوخت تضمین شود."
+      }
     },
-    about: {
-      title: "سنت",
-      titleAccent: "تعالی",
-      p1: "از سال ۱۹۹۰، مزون مژگان اسنی‌شری به عنوان نمادی از هنر دوخت ایستاده است. مزون ما بر این باور بنا شده که لباس تنها پوشیده نمی‌شود بلکه تجربه می‌شود، و در هنر تقریباً فراموش شده گلدوزی دستی تخصص دارد.",
-      p2: "هر لباسی که از آتلیه ما خارج می‌شود، حاصل عشقی است که با دقت طراحی شده تا روح منحصر به فرد پوشنده آن را بازتاب دهد. ما تکنیک‌های کهن سوزن‌دوزی ایرانی را با سیلوئت‌های معاصر ترکیب می‌کنیم.",
-      feature1Title: "مواد لوکس",
-      feature1Desc: "استفاده از ابریشم خالص، تارهای طلا و منسوجات کمیاب تهیه شده از بهترین کارخانه‌ها.",
-      feature2Title: "طراحی اختصاصی",
-      feature2Desc: "فرآیند خلق مشترک که اطمینان می‌دهد هر کوک با دیدگاه شما همسو است.",
-      role: "مژگان اسنی‌شری، موسس و مدیر خلاق"
-    },
-    quote: {
-      text: "«گلدوزی شعر سوزن است که بر بوم ابریشم نوشته می‌شود.»",
-      label: "فلسفه"
-    },
-    process: {
-      title: "فرآیند",
-      step1Title: "مشاوره و طراحی",
-      step1Desc: "ما با یک گفتگوی شخصی برای درک خواسته‌های شما آغاز می‌کنیم، که با طرح‌های دستی دنبال می‌شود.",
-      step2Title: "کار دست",
-      step2Desc: "هنرمندان ما صدها ساعت را صرف دوختن مهره‌ها، پولک‌ها و نخ‌ها با دست می‌کنند.",
-      step3Title: "پرو نهایی",
-      step3Desc: "تنظیمات دقیق اطمینان می‌دهد که لباس به کمال روی تن می‌نشیند و شاهکار را کامل می‌کند."
+    footer: {
+      description: "از سال ۱۹۹۰، خلق گلدوزی‌های لوکس با اشتیاق و دقت. میراثی از هنر سوزن‌دوزی برای عصر مدرن.",
+      headers: {
+        quickLinks: "لینک‌های سریع",
+        services: "خدمات",
+        contact: "تماس"
+      },
+      links: {
+        about: "درباره ما",
+        services: "خدمات ما",
+        gallery: "گالری نمونه کارها",
+        testimonials: "نظرات مشتریان",
+        bridal: "گلدوزی عروس",
+        custom: "لباس‌های سفارشی",
+        restoration: "ترمیم و بازسازی",
+        monogram: "منوگرام و نشان‌دوزی"
+      },
+      copyright: "© ۲۰۲۶ مزون مژگان اسنی‌شری. تمامی حقوق محفوظ است."
     },
     servicesPage: {
       heroTag: "هنر سوزن دوزی ظریف",

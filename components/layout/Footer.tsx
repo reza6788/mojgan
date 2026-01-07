@@ -1,8 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Globe, Camera, AtSign, Phone, Mail, MapPin, Clock, Facebook, Instagram } from 'lucide-react';
+import { AtSign, Phone, Mail, MapPin, Clock, Facebook, Instagram } from 'lucide-react';
+import { useStore } from '../../store/useStore';
+import { translations } from '../../i18n/translations';
 
 export const Footer: React.FC = () => {
+  const { language } = useStore();
+  const t = translations[language].footer;
+
   return (
     <footer className="bg-[#F9F6F0] dark:bg-[#0F1621] text-gray-600 dark:text-gray-400 pt-16 pb-8 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300 font-body">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,7 +21,7 @@ export const Footer: React.FC = () => {
               Meson Mojgan
             </h2>
             <p className="text-sm leading-relaxed text-gray-500 dark:text-gray-400 max-w-xs">
-              Since 1990, crafting luxury embroidery with passion and precision. A legacy of needlework artistry for the modern era.
+              {t.description}
             </p>
             <div className="flex gap-4 pt-2">
               <a href="#" className="text-gray-400 hover:text-primary transition-colors">
@@ -33,29 +38,29 @@ export const Footer: React.FC = () => {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest mb-6">Quick Links</h3>
+            <h3 className="text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest mb-6">{t.headers.quickLinks}</h3>
             <ul className="space-y-4">
-              <li><Link to="/" className="text-sm hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link to="/services" className="text-sm hover:text-primary transition-colors">Our Services</Link></li>
-              <li><Link to="/gallery" className="text-sm hover:text-primary transition-colors">Portfolio Gallery</Link></li>
-              <li><Link to="/testimonials" className="text-sm hover:text-primary transition-colors">Testimonials</Link></li>
+              <li><Link to="/" className="text-sm hover:text-primary transition-colors">{t.links.about}</Link></li>
+              <li><Link to="/services" className="text-sm hover:text-primary transition-colors">{t.links.services}</Link></li>
+              <li><Link to="/gallery" className="text-sm hover:text-primary transition-colors">{t.links.gallery}</Link></li>
+              <li><Link to="/testimonials" className="text-sm hover:text-primary transition-colors">{t.links.testimonials}</Link></li>
             </ul>
           </div>
 
           {/* Column 3: Services */}
           <div>
-            <h3 className="text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest mb-6">Services</h3>
+            <h3 className="text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest mb-6">{t.headers.services}</h3>
             <ul className="space-y-4">
-              <li><Link to="/services/bridal-ceremonial" className="text-sm hover:text-primary transition-colors">Bridal Embroidery</Link></li>
-              <li><Link to="/services/custom-garment" className="text-sm hover:text-primary transition-colors">Custom Garments</Link></li>
-              <li><Link to="/services/repair-restoration" className="text-sm hover:text-primary transition-colors">Restoration</Link></li>
-              <li><Link to="/services/fabric-personalization" className="text-sm hover:text-primary transition-colors">Monogramming</Link></li>
+              <li><Link to="/services/bridal-ceremonial" className="text-sm hover:text-primary transition-colors">{t.links.bridal}</Link></li>
+              <li><Link to="/services/custom-garment" className="text-sm hover:text-primary transition-colors">{t.links.custom}</Link></li>
+              <li><Link to="/services/repair-restoration" className="text-sm hover:text-primary transition-colors">{t.links.restoration}</Link></li>
+              <li><Link to="/services/fabric-personalization" className="text-sm hover:text-primary transition-colors">{t.links.monogram}</Link></li>
             </ul>
           </div>
 
           {/* Column 4: Contact */}
           <div>
-            <h3 className="text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest mb-6">Contact</h3>
+            <h3 className="text-gray-900 dark:text-white text-xs font-bold uppercase tracking-widest mb-6">{t.headers.contact}</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm">
                 <MapPin size={16} className="text-primary mt-1 shrink-0" />
@@ -81,7 +86,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Section: Separator & Copyright */}
         <div className="border-t border-gray-200 dark:border-gray-800 pt-8 text-center">
           <p className="text-xs text-gray-400 dark:text-gray-500 font-light tracking-wide">
-            © 2026 Meson Mojgan Esnaashary. All rights reserved.
+            {t.copyright}
           </p>
         </div>
 
