@@ -96,7 +96,7 @@ export const translations: Record<Language, Translation> = {
       maison: "The Maison",
       services: "Services",
       testimonials: "Testimonials",
-      contact: "Contact",
+      contact: "Place Order",
     },
     home: {
       hero: {
@@ -195,8 +195,8 @@ export const translations: Record<Language, Translation> = {
       items: testimonialItems
     },
     order: {
-      title: "Bespoke Commission",
-      subtitle: "Begin your journey to a unique masterpiece",
+      title: "Place Your Order",
+      subtitle: "Submit your details to commission your unique masterpiece",
       steps: {
         contact: "Contact Details",
         details: "Design Specifics",
@@ -223,7 +223,7 @@ export const translations: Record<Language, Translation> = {
       maison: "Das Haus",
       services: "Dienstleistungen",
       testimonials: "Kundenstimmen",
-      contact: "Kontakt",
+      contact: "Bestellen",
     },
     home: {
       hero: {
@@ -322,8 +322,8 @@ export const translations: Record<Language, Translation> = {
       items: testimonialItems
     },
     order: {
-      title: "Maßanfertigung",
-      subtitle: "Beginnen Sie Ihre Reise zu einem einzigartigen Meisterwerk",
+      title: "Bestellung Aufgeben",
+      subtitle: "Senden Sie Ihre Daten, um Ihr einzigartiges Meisterwerk in Auftrag zu geben",
       steps: {
         contact: "Kontaktdaten",
         details: "Design-Details",
@@ -350,7 +350,7 @@ export const translations: Record<Language, Translation> = {
       maison: "مزون",
       services: "خدمات",
       testimonials: "نظرات",
-      contact: "تماس",
+      contact: "ثبت سفارش",
     },
     home: {
       hero: {
@@ -449,8 +449,8 @@ export const translations: Record<Language, Translation> = {
       items: testimonialItems
     },
     order: {
-      title: "سفارش اختصاصی",
-      subtitle: "سفر خود را برای داشتن یک شاهکار منحصر به فرد آغاز کنید",
+      title: "ثبت سفارش",
+      subtitle: "اطلاعات خود را وارد کنید تا سفارش شاهکار منحصر به فرد شما ثبت شود",
       steps: {
         contact: "اطلاعات تماس",
         details: "جزئیات طراحی",

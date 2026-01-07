@@ -177,3 +177,9 @@ export interface OrderFormData {
   notes: string;
   referenceImage?: FileList;
 }
+
+export interface ChatMessage {
+  role: 'user' | 'model';
+  text: string;
+  timestamp: Date;
+}
